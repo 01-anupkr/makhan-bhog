@@ -1,0 +1,28 @@
+{
+  "name": "Makhan Bhog – Shah's Brothers",
+  "short_name": "Makhan Bhog",
+  "description": "Premium quality Flour (Atta), Rice & Grocery – Wholesale & Retail by Shah's Brothers",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fdf6ec",
+  "theme_color": "#b8860b",
+  "orientation": "portrait",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["food", "shopping", "business"],
+  "lang": "en",
+  "dir": "ltr"
+}
