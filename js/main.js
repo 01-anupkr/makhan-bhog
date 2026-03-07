@@ -1,27 +1,74 @@
 // ===== PWA INSTALL PROMPT =====
 let deferredPrompt;
 const installBtn = document.getElementById('installBtn');
+const installGuide = document.getElementById('installGuide');
+const installGuideClose = document.getElementById('installGuideClose');
+const installGuideContent = document.getElementById('installGuideContent');
 
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
-  if (installBtn) installBtn.style.display = 'inline-flex';
 });
+
+function isIOS() {
+  return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+}
+
+function isStandalone() {
+  return window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+}
+
+function showInstallGuide() {
+  if (!installGuide || !installGuideContent) return;
+  let html = '';
+  if (isIOS()) {
+    html = `
+      <p class="ig-step"><span class="ig-num">1</span> Tap the <strong>Share</strong> button <i class="fas fa-arrow-up-from-bracket"></i> at the bottom of Safari</p>
+      <p class="ig-step"><span class="ig-num">2</span> Scroll down and tap <strong>"Add to Home Screen"</strong> <i class="fas fa-plus-square"></i></p>
+      <p class="ig-step"><span class="ig-num">3</span> Tap <strong>"Add"</strong> — the app icon will appear on your home screen!</p>
+      <p class="ig-note"><i class="fas fa-info-circle"></i> Works best in <strong>Safari</strong> browser on iPhone/iPad.</p>`;
+  } else {
+    html = `
+      <p class="ig-step"><span class="ig-num">1</span> Tap the <strong>menu</strong> <i class="fas fa-ellipsis-vertical"></i> (three dots) in your browser</p>
+      <p class="ig-step"><span class="ig-num">2</span> Tap <strong>"Install app"</strong> or <strong>"Add to Home Screen"</strong></p>
+      <p class="ig-step"><span class="ig-num">3</span> Confirm by tapping <strong>"Install"</strong> — done!</p>
+      <p class="ig-note"><i class="fas fa-info-circle"></i> Works best in <strong>Chrome</strong> or <strong>Edge</strong> browser.</p>`;
+  }
+  installGuideContent.innerHTML = html;
+  installGuide.classList.add('active');
+}
 
 if (installBtn) {
   installBtn.addEventListener('click', async () => {
-    if (!deferredPrompt) return;
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    deferredPrompt = null;
-    installBtn.style.display = 'none';
+    if (isStandalone()) return;
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      if (outcome === 'accepted') installBtn.style.display = 'none';
+    } else {
+      showInstallGuide();
+    }
+  });
+}
+
+if (installGuideClose) {
+  installGuideClose.addEventListener('click', () => installGuide.classList.remove('active'));
+}
+if (installGuide) {
+  installGuide.addEventListener('click', (e) => {
+    if (e.target === installGuide) installGuide.classList.remove('active');
   });
 }
 
 window.addEventListener('appinstalled', () => {
   deferredPrompt = null;
   if (installBtn) installBtn.style.display = 'none';
+  if (installGuide) installGuide.classList.remove('active');
 });
+
+// Hide install button if already installed as app
+if (isStandalone() && installBtn) installBtn.style.display = 'none';
 
 // ===== HERO PARTICLE EFFECT =====
 function createParticles() {

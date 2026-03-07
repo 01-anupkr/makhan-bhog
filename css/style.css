@@ -352,6 +352,107 @@ img {
   50% { box-shadow: 0 4px 25px rgba(212, 160, 23, 0.45); }
 }
 
+/* Install Guide Modal */
+.install-guide-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+.install-guide-overlay.active {
+  display: flex;
+}
+
+.install-guide {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  box-shadow: var(--shadow-xl);
+  animation: guideSlideIn 0.3s ease;
+}
+
+@keyframes guideSlideIn {
+  from { opacity: 0; transform: translateY(30px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.install-guide h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--secondary);
+  margin-bottom: 20px;
+}
+
+.install-guide h3 i {
+  margin-right: 8px;
+}
+
+.install-guide-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.install-guide-close:hover {
+  color: var(--primary);
+}
+
+.ig-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 0.92rem;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+}
+
+.ig-step:last-of-type {
+  border-bottom: none;
+}
+
+.ig-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  background: linear-gradient(135deg, var(--secondary), #c89a10);
+  color: #fff;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.ig-note {
+  margin-top: 16px;
+  padding: 10px 14px;
+  background: var(--bg-warm);
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  color: var(--text-light);
+}
+
+.ig-note i {
+  color: var(--secondary);
+  margin-right: 6px;
+}
+
 .nav-call-btn {
   display: inline-flex;
   align-items: center;

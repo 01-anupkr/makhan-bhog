@@ -44,7 +44,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="nav-actions">
-        <button class="nav-install-btn" id="installBtn" aria-label="Install App" style="display:none;">
+        <button class="nav-install-btn" id="installBtn" aria-label="Install App">
           <i class="fas fa-download"></i> <span>Install App</span>
         </button>
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
@@ -937,6 +937,15 @@
       </div>
     </div>
   </footer>
+
+  <!-- Install Guide Modal -->
+  <div class="install-guide-overlay" id="installGuide">
+    <div class="install-guide">
+      <button class="install-guide-close" id="installGuideClose"><i class="fas fa-times"></i></button>
+      <h3><i class="fas fa-download"></i> Install Makhan Bhog App</h3>
+      <div class="install-guide-content" id="installGuideContent"></div>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
   <script>
