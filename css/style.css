@@ -324,6 +324,34 @@ img {
   gap: 15px;
 }
 
+.nav-install-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  background: linear-gradient(135deg, var(--secondary), #c89a10);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all var(--transition);
+  box-shadow: 0 4px 15px var(--secondary-glow);
+  animation: installPulse 2.5s ease-in-out infinite;
+}
+
+.nav-install-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 25px var(--secondary-glow);
+}
+
+@keyframes installPulse {
+  0%, 100% { box-shadow: 0 4px 15px var(--secondary-glow); }
+  50% { box-shadow: 0 4px 25px rgba(212, 160, 23, 0.45); }
+}
+
 .nav-call-btn {
   display: inline-flex;
   align-items: center;
@@ -2168,6 +2196,15 @@ img {
 
   .nav-call-btn {
     display: none;
+  }
+
+  .nav-install-btn span {
+    display: none;
+  }
+
+  .nav-install-btn {
+    padding: 9px 12px;
+    font-size: 1rem;
   }
 
   .hero {
