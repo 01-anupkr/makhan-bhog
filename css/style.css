@@ -1966,6 +1966,121 @@ img {
   justify-content: center;
 }
 
+/* ===== GET THE APP BANNER ===== */
+.app-banner {
+  background: linear-gradient(135deg, #1a1a2e 0%, #0d0d1a 100%);
+  padding: 60px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.app-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(212,160,23,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.app-banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.app-banner-text {
+  flex: 1;
+}
+
+.app-banner-text h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.app-banner-text h2 i {
+  color: var(--secondary);
+  margin-right: 10px;
+}
+
+.app-banner-text > p {
+  color: rgba(255,255,255,0.7);
+  font-size: 1rem;
+  margin-bottom: 24px;
+}
+
+.app-banner-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.app-banner-btns .btn {
+  font-size: 0.95rem;
+  padding: 14px 28px;
+}
+
+.app-banner-btns .btn-outline {
+  border-color: rgba(255,255,255,0.3);
+  color: #fff;
+}
+
+.app-banner-btns .btn-outline:hover {
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+.app-banner-note {
+  color: rgba(255,255,255,0.45);
+  font-size: 0.8rem;
+}
+
+.app-banner-note i {
+  color: #4caf50;
+  margin-right: 4px;
+}
+
+.app-banner-icon {
+  flex-shrink: 0;
+}
+
+.app-mock {
+  width: 160px;
+  height: 160px;
+  border-radius: 32px;
+  background: linear-gradient(135deg, #f5e6c8, #b8860b);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 20px 60px rgba(184,134,11,0.3);
+  animation: appFloat 3s ease-in-out infinite;
+}
+
+.app-mock i {
+  font-size: 3rem;
+  color: #5a3e1b;
+}
+
+.app-mock span {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #5a3e1b;
+}
+
+@keyframes appFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
 /* ===== FLOATING BUTTONS ===== */
 .floating-btns {
   position: fixed;
@@ -2539,6 +2654,33 @@ img {
     width: 50px;
     height: 50px;
     font-size: 1.2rem;
+  }
+
+  .app-banner-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .app-banner-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .app-banner-btns {
+    justify-content: center;
+  }
+
+  .app-mock {
+    width: 120px;
+    height: 120px;
+    border-radius: 24px;
+  }
+
+  .app-mock i {
+    font-size: 2.2rem;
+  }
+
+  .app-mock span {
+    font-size: 0.8rem;
   }
 
   .testimonial-card {

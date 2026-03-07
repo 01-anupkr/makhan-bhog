@@ -70,6 +70,24 @@ window.addEventListener('appinstalled', () => {
 // Hide install button if already installed as app
 if (isStandalone() && installBtn) installBtn.style.display = 'none';
 
+// Banner install button (mirrors navbar install logic)
+const bannerInstallBtn = document.getElementById('bannerInstallBtn');
+if (bannerInstallBtn) {
+  bannerInstallBtn.addEventListener('click', async () => {
+    if (isStandalone()) return;
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      if (outcome === 'accepted') {
+        if (installBtn) installBtn.style.display = 'none';
+      }
+    } else {
+      showInstallGuide();
+    }
+  });
+}
+
 // ===== HERO PARTICLE EFFECT =====
 function createParticles() {
   const container = document.getElementById("heroParticles");
