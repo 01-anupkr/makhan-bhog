@@ -18,6 +18,123 @@ function createParticles() {
 }
 createParticles();
 
+// ===== DYNAMIC TESTIMONIALS SLIDER =====
+(function () {
+  const reviews = [
+    { name: "Rajesh Kumar", role: "Retail Customer", icon: "fa-user", stars: 5, product: "Wheat Atta", city: "Chhapra", date: "2 weeks ago", text: "Makhan Bhog ka atta sabse alag hai — soft roti banti hai, bilkul ghar jaisi quality. Hum 5 saal se inhi se lete hain." },
+    { name: "Amit Gupta", role: "Wholesale Dealer", icon: "fa-store", stars: 5, product: "Bulk Atta & Rice", city: "Siwan", date: "1 month ago", text: "Wholesale price mein best quality milti hai. Delivery bhi time pe hoti hai. Shah's Brothers pe pura bharosa hai." },
+    { name: "Sunil Verma", role: "Restaurant Owner", icon: "fa-utensils", stars: 4.5, product: "Rice & Atta", city: "Patna", date: "3 weeks ago", text: "Pure quality, no mixing — we have been ordering rice and atta for our restaurant chain. Very consistent quality every time." },
+    { name: "Priya Devi", role: "Housewife", icon: "fa-house-user", stars: 5, product: "Besan & Sooji", city: "Gopalganj", date: "1 week ago", text: "Besan se pakode banaye toh bilkul crispy bane. Sooji ka halwa bhi bahut tasty bana. Packing bhi achi hoti hai." },
+    { name: "Vikram Singh", role: "Kirana Store", icon: "fa-shop", stars: 5, product: "All Products", city: "Ballia", date: "5 days ago", text: "Mere store pe sirf Makhan Bhog rakhte hain — customer kabhi complain nahi karte. Quality aur price dono perfect hai." },
+    { name: "Mohammad Irfan", role: "Bakery Owner", icon: "fa-bread-slice", stars: 4.5, product: "Maida & Sooji", city: "Mau", date: "2 months ago", text: "Bakery ke liye maida chahiye thi bulk mein — inki maida se bread bahut soft banti hai. Regular supplier ban gaye hain." },
+    { name: "Anita Sharma", role: "Catering Service", icon: "fa-bowl-food", stars: 5, product: "Atta & Spices", city: "Varanasi", date: "3 days ago", text: "Catering business mein quality sabse important hai. Makhan Bhog se atta aur masale dono lete hain — kabhi disappoint nahi kiya." },
+    { name: "Deepak Yadav", role: "Retail Customer", icon: "fa-user", stars: 5, product: "Rice", city: "Deoria", date: "1 week ago", text: "Chawal ki quality ekdum first class hai. Daane lambe aur khushbudaar hain. Poore family ko pasand aaya." },
+    { name: "Santosh Tiwari", role: "Distributor", icon: "fa-truck", stars: 5, product: "Wholesale Supply", city: "Buxar", date: "4 days ago", text: "Bihar ke 3 district mein inke products supply karte hain. Koi complaint nahi aati — sab log satisfy hain." },
+    { name: "Kavita Kumari", role: "Housewife", icon: "fa-house-user", stars: 4.5, product: "Atta & Dals", city: "Revelganj", date: "6 days ago", text: "Roti fulke jaisi banti hai inka atta use karke. Dal bhi jaldi gal jaati hai. Sab cheezein fresh milti hain." },
+    { name: "Ravi Prasad", role: "Hotel Owner", icon: "fa-hotel", stars: 5, product: "Rice & Oil", city: "Hajipur", date: "2 weeks ago", text: "Hotel ke liye bulk order dete hain — hamesha time pe delivery hoti hai. Rice ek number hai, guest hamesha tarif karte hain." },
+    { name: "Sunita Gupta", role: "Sweet Shop", icon: "fa-candy-cane", stars: 5, product: "Besan & Maida", city: "Sonepur", date: "10 days ago", text: "Sweet shop ke liye besan aur maida yahi se lete hain. Laddu aur barfi ki quality tabhi achi banti hai jab material acha ho." }
+  ];
+
+  const track = document.getElementById("testimonialTrack");
+  const dotsContainer = document.getElementById("sliderDots");
+  if (!track || !dotsContainer) return;
+
+  function renderStars(count) {
+    let html = "";
+    for (let i = 1; i <= 5; i++) {
+      if (i <= Math.floor(count)) html += '<i class="fas fa-star"></i>';
+      else if (i - count === 0.5) html += '<i class="fas fa-star-half-alt"></i>';
+      else html += '<i class="far fa-star"></i>';
+    }
+    return html;
+  }
+
+  function buildCard(r) {
+    return `<div class="testimonial-card">
+      <div class="testimonial-header">
+        <div class="testimonial-stars">${renderStars(r.stars)}</div>
+        <span class="testimonial-verified"><i class="fas fa-circle-check"></i> Verified</span>
+      </div>
+      <span class="testimonial-product"><i class="fas fa-tag"></i> ${r.product}</span>
+      <p class="testimonial-text">"${r.text}"</p>
+      <div class="testimonial-footer">
+        <div class="testimonial-author">
+          <div class="author-avatar"><i class="fas ${r.icon}"></i></div>
+          <div>
+            <strong>${r.name}</strong>
+            <span>${r.role} · ${r.city}</span>
+          </div>
+        </div>
+        <span class="testimonial-date">${r.date}</span>
+      </div>
+    </div>`;
+  }
+
+  // Determine how many cards to show per view
+  function cardsPerView() {
+    if (window.innerWidth <= 480) return 1;
+    if (window.innerWidth <= 900) return 2;
+    return 3;
+  }
+
+  let perView = cardsPerView();
+  let currentSlide = 0;
+  let totalSlides;
+  let autoPlayTimer;
+
+  function renderSlider() {
+    perView = cardsPerView();
+    totalSlides = Math.ceil(reviews.length / perView);
+    track.innerHTML = reviews.map(buildCard).join("");
+    // Build dots
+    dotsContainer.innerHTML = "";
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement("button");
+      dot.classList.add("slider-dot");
+      dot.setAttribute("aria-label", "Go to slide " + (i + 1));
+      if (i === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => goTo(i));
+      dotsContainer.appendChild(dot);
+    }
+    goTo(0);
+  }
+
+  function goTo(index) {
+    currentSlide = index;
+    if (currentSlide >= totalSlides) currentSlide = 0;
+    if (currentSlide < 0) currentSlide = totalSlides - 1;
+    const cardWidth = track.children[0].offsetWidth + 25; // gap
+    track.style.transform = "translateX(-" + (currentSlide * perView * cardWidth) + "px)";
+    dotsContainer.querySelectorAll(".slider-dot").forEach((d, i) => {
+      d.classList.toggle("active", i === currentSlide);
+    });
+  }
+
+  document.getElementById("tPrev").addEventListener("click", () => { goTo(currentSlide - 1); resetAuto(); });
+  document.getElementById("tNext").addEventListener("click", () => { goTo(currentSlide + 1); resetAuto(); });
+
+  // Auto-play
+  function startAuto() { autoPlayTimer = setInterval(() => goTo(currentSlide + 1), 5000); }
+  function resetAuto() { clearInterval(autoPlayTimer); startAuto(); }
+
+  // Touch / swipe support
+  let touchStartX = 0;
+  track.addEventListener("touchstart", (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener("touchend", (e) => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) { diff > 0 ? goTo(currentSlide + 1) : goTo(currentSlide - 1); resetAuto(); }
+  }, { passive: true });
+
+  // Pause on hover
+  const slider = document.getElementById("testimonialSlider");
+  slider.addEventListener("mouseenter", () => clearInterval(autoPlayTimer));
+  slider.addEventListener("mouseleave", startAuto);
+
+  renderSlider();
+  startAuto();
+  window.addEventListener("resize", () => { renderSlider(); resetAuto(); });
+})();
+
 // ===== DARK / LIGHT MODE TOGGLE =====
 const themeToggle = document.getElementById("themeToggle");
 const themeIcon = themeToggle.querySelector("i");
