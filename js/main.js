@@ -324,54 +324,25 @@ const enquiryForm = document.getElementById("enquiryForm");
 const formSuccess = document.getElementById("formSuccess");
 
 if (enquiryForm) {
-  enquiryForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
+  enquiryForm.addEventListener("submit", (e) => {
+    // Don't prevent default — form submits natively into hidden iframe
 
     const submitBtn = enquiryForm.querySelector('button[type="submit"]');
-    const originalHTML = submitBtn.innerHTML;
-
-    // Show loading state
     submitBtn.innerHTML = '<i class="fas fa-spinner"></i> Sending...';
     submitBtn.classList.add("btn-loading");
+    submitBtn.disabled = true;
 
-    // Collect form data
-    const formData = new FormData(enquiryForm);
-    const data = {};
-    formData.forEach((value, key) => {
-      if (data[key]) {
-        data[key] = Array.isArray(data[key])
-          ? [...data[key], value]
-          : [data[key], value];
-      } else {
-        data[key] = value;
-      }
-    });
+    // Collect form data for WhatsApp
+    const fd = new FormData(enquiryForm);
+    const name = fd.get("fullName") || "";
+    const phone = fd.get("phone") || "";
+    const city = fd.get("city") || "";
+    const orderType = fd.get("orderType") || "";
+    const products = fd.getAll("products").join(", ") || "";
+    const quantity = fd.get("quantity") || "";
+    const message = fd.get("message") || "";
 
-    // Build WhatsApp message with form data
-    const name = data.fullName || "";
-    const phone = data.phone || "";
-    const city = data.city || "";
-    const orderType = data.orderType || "";
-    const products = Array.isArray(data.products)
-      ? data.products.join(", ")
-      : data.products || "";
-    const quantity = data.quantity || "";
-    const message = data.message || "";
-
-    // Try sending via FormSubmit (email delivery)
-    try {
-      const response = await fetch(enquiryForm.action, {
-        method: "POST",
-        body: formData,
-        headers: { Accept: "application/json" },
-      });
-
-      if (!response.ok) throw new Error("Form submission failed");
-    } catch {
-      // If email service fails, still proceed — WhatsApp is the backup
-    }
-
-    // Also open WhatsApp with pre-filled message
+    // Open WhatsApp with pre-filled message after a short delay
     const whatsappMsg = encodeURIComponent(
       `🌾 *New Enquiry - Makhan Bhog*\n\n` +
         `*Name:* ${name}\n` +
@@ -382,22 +353,25 @@ if (enquiryForm) {
         `*Quantity:* ${quantity}\n` +
         `*Message:* ${message}`
     );
-    window.open(`https://wa.me/919199774408?text=${whatsappMsg}`, "_blank");
+    setTimeout(() => {
+      window.open(`https://wa.me/919199774408?text=${whatsappMsg}`, "_blank");
+    }, 500);
 
-    // Reset button
-    submitBtn.innerHTML = originalHTML;
-    submitBtn.classList.remove("btn-loading");
+    // Show success after short delay
+    setTimeout(() => {
+      submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Enquiry';
+      submitBtn.classList.remove("btn-loading");
+      submitBtn.disabled = false;
+      enquiryForm.style.display = "none";
+      formSuccess.classList.remove("hidden");
+    }, 2000);
 
-    // Show success message
-    enquiryForm.style.display = "none";
-    formSuccess.classList.remove("hidden");
-
-    // Reset after 10 seconds
+    // Reset after 12 seconds
     setTimeout(() => {
       enquiryForm.reset();
       enquiryForm.style.display = "block";
       formSuccess.classList.add("hidden");
-    }, 10000);
+    }, 12000);
   });
 }
 
