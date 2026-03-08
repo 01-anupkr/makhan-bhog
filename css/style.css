@@ -1156,22 +1156,24 @@ img {
 }
 
 .price-market {
-  font-size: 0.85rem;
-  color: var(--text-muted) !important;
+  font-size: 0.9rem;
+  color: #999 !important;
   text-decoration: line-through;
-  font-weight: 400;
-  opacity: 0.7;
+  text-decoration-color: #c8102e;
+  text-decoration-thickness: 2px;
+  font-weight: 500;
+  opacity: 1;
 }
 
 .price-ours {
   display: inline-block;
-  background: linear-gradient(135deg, rgba(200, 16, 46, 0.1), rgba(212, 160, 23, 0.1));
+  background: linear-gradient(135deg, rgba(0, 150, 0, 0.1), rgba(0, 150, 0, 0.05));
   padding: 4px 14px;
   border-radius: 20px;
-  border: 1px solid rgba(200, 16, 46, 0.2);
-  color: var(--primary) !important;
+  border: 1px solid rgba(0, 150, 0, 0.25);
+  color: #1a8c1a !important;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
 
 .product-price i {
