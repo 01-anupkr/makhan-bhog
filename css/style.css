@@ -701,6 +701,72 @@ img {
   animation: fadeInUp 0.8s ease 0.5s both;
 }
 
+.btn-whatsapp {
+  background: #25d366 !important;
+  color: #fff !important;
+  border-color: #25d366 !important;
+}
+
+.btn-whatsapp:hover {
+  background: #1da851 !important;
+  border-color: #1da851 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+}
+
+/* Hero Offer Cards */
+.hero-offers {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 25px auto 30px;
+  max-width: 800px;
+  animation: fadeInUp 0.8s ease 0.45s both;
+}
+
+.hero-offer-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  text-align: left;
+  flex: 1;
+  min-width: 220px;
+  max-width: 260px;
+  transition: all var(--transition);
+}
+
+.hero-offer-card:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: var(--secondary);
+  transform: translateY(-3px);
+}
+
+.hero-offer-card > i {
+  font-size: 1.6rem;
+  color: var(--secondary);
+  flex-shrink: 0;
+}
+
+.hero-offer-card strong {
+  display: block;
+  font-size: 0.9rem;
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.hero-offer-card p {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  line-height: 1.4;
+}
+
 .hero-numbers {
   display: flex;
   gap: 20px;
@@ -1074,6 +1140,41 @@ img {
   color: var(--text-light);
   margin-bottom: 14px;
   line-height: 1.6;
+}
+
+.product-price {
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  color: var(--primary) !important;
+  margin-bottom: 6px !important;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.price-market {
+  font-size: 0.85rem;
+  color: var(--text-muted) !important;
+  text-decoration: line-through;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.price-ours {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(200, 16, 46, 0.1), rgba(212, 160, 23, 0.1));
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(200, 16, 46, 0.2);
+  color: var(--primary) !important;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.product-price i {
+  font-size: 0.8rem;
+  margin-right: 1px;
 }
 
 .product-sizes {
@@ -2443,6 +2544,26 @@ img {
 
   .hero-desc {
     font-size: 0.95rem;
+  }
+
+  .hero-offers {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-offer-card {
+    max-width: 100%;
+    min-width: unset;
+  }
+
+  .product-categories {
+    gap: 6px;
+  }
+
+  .cat-btn {
+    font-size: 0.72rem;
+    padding: 6px 12px;
   }
 
   .hero-numbers {
