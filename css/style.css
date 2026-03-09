@@ -718,6 +718,8 @@ ul { list-style: none; }
   background: rgba(var(--primary-rgb), .08);
   padding: 4px 12px;
   border-radius: 50px;
+  font-family: var(--font-heading);
+  letter-spacing: -.2px;
 }
 .highlight-card {
   background: linear-gradient(135deg, var(--primary), var(--primary-light));
@@ -918,7 +920,7 @@ ul { list-style: none; }
 .product-info h3 { font-size: .95rem; font-weight: 700; margin-bottom: 6px; color: var(--text); }
 .product-price { margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
 .price-market { text-decoration: line-through; color: var(--text-muted); font-size: .82rem; }
-.price-ours { color: var(--primary); font-weight: 800; font-size: 1.05rem; }
+.price-ours { color: var(--primary); font-family: var(--font-heading); font-weight: 900; font-size: 1.15rem; letter-spacing: -.3px; }
 .product-info > p { font-size: .82rem; color: var(--text-light); margin-bottom: 10px; line-height: 1.45; }
 .product-sizes { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
 .size-tag {
@@ -1791,8 +1793,8 @@ ul { list-style: none; }
   .product-img { height: 130px; padding: 12px; }
   .product-info { padding: 12px; }
   .product-info h3 { font-size: .85rem; margin-bottom: 4px; }
-  .price-ours { font-size: .95rem; }
-  .price-market { font-size: .75rem; }
+  .price-ours { font-size: 1rem; }
+  .price-market { font-size: .72rem; }
   .product-info > p { font-size: .75rem; line-height: 1.4; margin-bottom: 8px; }
   .product-sizes { gap: 4px; margin-bottom: 10px; }
   .size-tag { font-size: .62rem; padding: 2px 7px; }

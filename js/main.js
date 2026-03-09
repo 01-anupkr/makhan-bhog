@@ -311,17 +311,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const formSuccess = document.getElementById('formSuccess');
   if (form && formSuccess) {
     form.addEventListener('submit', e => {
-      e.preventDefault();
+      // Collect data before native submit clears the form
       const data = new FormData(form);
-      fetch(form.action, { method: 'POST', body: data, mode: 'no-cors' });
-
-      // WhatsApp
       const name = data.get('fullName') || '';
       const phone = data.get('phone') || '';
       const orderType = data.get('orderType') || '';
       const products = data.getAll('products').join(', ');
       const qty = data.get('quantity') || '';
       const msg = data.get('message') || '';
+
+      // Let the form submit naturally to the hidden iframe (FormSubmit)
+      // Do NOT call e.preventDefault()
+
+      // Build WhatsApp message
       let waMsg = `*New Enquiry – Makhan Bhog*%0A`;
       waMsg += `Name: ${name}%0A`;
       waMsg += `Phone: ${phone}%0A`;
@@ -329,10 +331,13 @@ document.addEventListener('DOMContentLoaded', () => {
       if (products) waMsg += `Products: ${products}%0A`;
       if (qty) waMsg += `Quantity: ${qty}%0A`;
       if (msg) waMsg += `Message: ${msg}%0A`;
-      window.open(`https://wa.me/919199774408?text=${waMsg}`, '_blank');
 
-      form.classList.add('hidden');
-      formSuccess.classList.remove('hidden');
+      // Show success & open WhatsApp after a short delay
+      setTimeout(() => {
+        form.classList.add('hidden');
+        formSuccess.classList.remove('hidden');
+        window.open(`https://wa.me/919199774408?text=${waMsg}`, '_blank');
+      }, 500);
     });
   }
 
