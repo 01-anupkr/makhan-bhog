@@ -160,22 +160,33 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- MOBILE MENU ---------- */
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('navLinks');
+  const navOverlay = document.getElementById('navOverlay');
   if (hamburger && navLinks) {
+    function openMenu() {
+      hamburger.classList.add('active');
+      navLinks.classList.add('open');
+      if (navOverlay) navOverlay.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('open');
+      if (navOverlay) navOverlay.classList.remove('show');
+      document.body.style.overflow = '';
+    }
     hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navLinks.classList.toggle('open');
+      navLinks.classList.contains('open') ? closeMenu() : openMenu();
     });
     navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('open');
-      });
+      link.addEventListener('click', closeMenu);
     });
+    if (navOverlay) navOverlay.addEventListener('click', closeMenu);
   }
 
   /* ---------- ACTIVE NAV ON SCROLL ---------- */
   const sections = document.querySelectorAll('section[id]');
   const navItems = document.querySelectorAll('.nav-links a');
+  const bottomNavItems = document.querySelectorAll('.bottom-nav-item[data-section]');
   if (sections.length && navItems.length) {
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY + 120;
@@ -187,6 +198,10 @@ document.addEventListener('DOMContentLoaded', () => {
           navItems.forEach(a => {
             a.classList.remove('active');
             if (a.getAttribute('href') === '#' + id) a.classList.add('active');
+          });
+          bottomNavItems.forEach(bn => {
+            bn.classList.remove('active');
+            if (bn.dataset.section === id) bn.classList.add('active');
           });
         }
       });
@@ -274,6 +289,21 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+  }
+
+  /* ---------- MOBILE BOTTOM NAV — HIDE ON SCROLL DOWN ---------- */
+  const mobileBottomNav = document.getElementById('mobileBottomNav');
+  if (mobileBottomNav) {
+    let lastScrollY = 0;
+    window.addEventListener('scroll', () => {
+      const currentY = window.scrollY;
+      if (currentY > lastScrollY && currentY > 300) {
+        mobileBottomNav.style.transform = 'translateY(100%)';
+      } else {
+        mobileBottomNav.style.transform = 'translateY(0)';
+      }
+      lastScrollY = currentY;
+    }, { passive: true });
   }
 
   /* ---------- ENQUIRY FORM ---------- */

@@ -4,39 +4,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Makhan Bhog | Shah's Brothers – Wholesale Grocery, Flour, Rice &amp; General Store</title>
+  <title>Makhan Bhog | Shah's Brothers – Premium Flour, Rice, Grocery &amp; General Store</title>
   <meta name="description"
-    content="Makhan Bhog by Shah's Brothers – Your one-stop wholesale grocery store. Atta, rice, dals, spices, oil, ghee &amp; all grocery at best wholesale prices!" />
+    content="Makhan Bhog by Shah's Brothers – Premium flour mill &amp; wholesale general store. Atta, rice, dals, spices, oil, ghee &amp; all grocery. Combo orders welcome!" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@500;700;800;900&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <!-- PWA Manifest -->
   <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#0f5132" />
+  <meta name="theme-color" content="#b8860b" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Makhan Bhog" />
   <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-  <!-- ===== TOP INFO BAR ===== -->
-  <div class="top-bar">
-    <div class="container">
-      <div class="top-bar-inner">
-        <span><i class="fas fa-clock"></i> Mon–Sat: 8 AM – 8 PM</span>
-        <span><i class="fas fa-percent"></i> Wholesale Prices — Save Up to 20%</span>
-        <span><i class="fas fa-phone"></i> <a href="tel:+919199774408">+91 9199774408</a></span>
-      </div>
-    </div>
-  </div>
-
   <!-- ===== NAVBAR ===== -->
   <nav id="navbar">
     <div class="nav-container">
       <a href="#home" class="logo">
-        <span class="logo-icon"><i class="fas fa-store"></i></span>
+        <span class="logo-icon"><i class="fas fa-wheat-awn"></i></span>
         <div class="logo-text">
           <span class="brand-name">Makhan Bhog</span>
           <span class="brand-sub">Shah's Brothers</span>
@@ -44,7 +37,6 @@
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#categories">Categories</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#products">Products</a></li>
         <li><a href="#gallery">Gallery</a></li>
@@ -58,47 +50,59 @@
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
           <i class="fas fa-moon"></i>
         </button>
-        <a href="tel:+919199774408" class="nav-call-btn"><i class="fas fa-phone"></i> <span>Call Now</span></a>
+        <a href="tel:+919199774408" class="nav-call-btn"><i class="fas fa-phone"></i> Call Now</a>
         <button class="hamburger" id="hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
-    <div class="nav-overlay" id="navOverlay"></div>
   </nav>
 
   <!-- ===== HERO ===== -->
   <section id="home" class="hero">
-    <div class="hero-bg-overlay"></div>
+    <div class="hero-particles" id="heroParticles"></div>
     <div class="hero-content">
       <div class="hero-badge-wrap">
-        <span class="hero-badge"><i class="fas fa-shield-halved"></i> Trusted Since 25+ Years &bull; FSSAI Licensed</span>
+        <span class="hero-badge"><i class="fas fa-award"></i> Since Generations &bull; Trusted Quality</span>
       </div>
-      <h1>Premium <span class="highlight-text">Wholesale Grocery</span><br/>at Factory Direct Prices</h1>
-      <p class="hero-desc">Get mill-fresh <strong>Flour, Rice, Dals, Spices, Oil, Ghee</strong> &amp; 150+ daily essentials delivered at unbeatable wholesale rates. No middlemen. Straight from our mill to your doorstep.</p>
-      <div class="hero-price-tags">
-        <div class="price-tag">
-          <span class="price-tag-label">Atta</span>
-          <span class="price-tag-value">&#8377;30<small>/kg</small></span>
+      <h1>Makhan Bhog</h1>
+      <h2>Shah's Brothers</h2>
+      <p class="hero-quote">"शुद्धता की पहचान, भरोसे का नाम — मखन भोग"</p>
+      <p class="hero-desc">Premium quality <strong>Flour (Atta)</strong>, <strong>Rice</strong> &amp; everyday
+        <strong>Grocery</strong> — delivered wholesale &amp; retail, straight from our mill to your home.
+      </p>
+      <div class="hero-offers">
+        <div class="hero-offer-card">
+          <i class="fas fa-store"></i>
+          <div>
+            <strong>Mill + General Store</strong>
+            <p>One-stop shop for all grocery needs — combo orders welcome!</p>
+          </div>
         </div>
-        <div class="price-tag">
-          <span class="price-tag-label">Rice</span>
-          <span class="price-tag-value">&#8377;38<small>/kg</small></span>
+        <div class="hero-offer-card">
+          <i class="fas fa-percent"></i>
+          <div>
+            <strong>Mill-Direct Prices</strong>
+            <p>Save 10-20% compared to market rates — no middlemen!</p>
+          </div>
         </div>
-        <div class="price-tag">
-          <span class="price-tag-label">Dal</span>
-          <span class="price-tag-value">&#8377;82<small>/kg</small></span>
-        </div>
-        <div class="price-tag">
-          <span class="price-tag-label">Oil</span>
-          <span class="price-tag-value">&#8377;140<small>/L</small></span>
+        <div class="hero-offer-card">
+          <i class="fas fa-truck-fast"></i>
+          <div>
+            <strong>Bulk &amp; Combo Delivery</strong>
+            <p>Order atta, rice, masala, oil — all in one delivery!</p>
+          </div>
         </div>
       </div>
       <div class="hero-btns">
-        <a href="#products" class="btn btn-primary"><i class="fas fa-shopping-basket"></i> View Products</a>
-        <a href="tel:+919199774408" class="btn btn-outline"><i class="fas fa-phone"></i> Call for Bulk Order</a>
-        <a href="https://wa.me/919199774408" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="#products" class="btn btn-primary btn-glow">Explore Products <i class="fas fa-arrow-right"></i></a>
+        <a href="tel:+919199774408" class="btn btn-outline btn-glow"><i class="fas fa-phone"></i> Order Now</a>
+        <a href="https://wa.me/919199774408" class="btn btn-whatsapp btn-glow" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp Order</a>
       </div>
+
+    </div>
+    <div class="hero-scroll">
+      <a href="#about"><i class="fas fa-chevron-down"></i></a>
     </div>
   </section>
 
@@ -107,181 +111,64 @@
     <div class="marquee-track">
       <span><i class="fas fa-check-circle"></i> 100% Pure &amp; Fresh</span>
       <span><i class="fas fa-star"></i> 25+ Years of Trust</span>
-      <span><i class="fas fa-truck-fast"></i> Reliable Delivery</span>
+      <span><i class="fas fa-truck-fast"></i> Fast Delivery</span>
       <span><i class="fas fa-users"></i> 5000+ Happy Customers</span>
       <span><i class="fas fa-medal"></i> No Adulteration</span>
       <span><i class="fas fa-boxes-stacked"></i> Wholesale &amp; Retail</span>
-      <span><i class="fas fa-tags"></i> Best Wholesale Prices</span>
+      <span><i class="fas fa-tags"></i> Best Mill Prices</span>
       <span><i class="fas fa-handshake"></i> Trusted by Generations</span>
-      <span><i class="fas fa-shield-halved"></i> FSSAI Licensed</span>
+      <!-- Duplicate for seamless loop -->
       <span><i class="fas fa-check-circle"></i> 100% Pure &amp; Fresh</span>
       <span><i class="fas fa-star"></i> 25+ Years of Trust</span>
-      <span><i class="fas fa-truck-fast"></i> Reliable Delivery</span>
+      <span><i class="fas fa-truck-fast"></i> Fast Delivery</span>
       <span><i class="fas fa-users"></i> 5000+ Happy Customers</span>
       <span><i class="fas fa-medal"></i> No Adulteration</span>
       <span><i class="fas fa-boxes-stacked"></i> Wholesale &amp; Retail</span>
-      <span><i class="fas fa-tags"></i> Best Wholesale Prices</span>
+      <span><i class="fas fa-tags"></i> Best Mill Prices</span>
       <span><i class="fas fa-handshake"></i> Trusted by Generations</span>
-      <span><i class="fas fa-shield-halved"></i> FSSAI Licensed</span>
     </div>
   </div>
-
-  <!-- ===== HOW TO ORDER ===== -->
-  <section class="section how-to-order">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-tag"><i class="fas fa-clipboard-list"></i> Simple Process</p>
-        <h2>How to <span>Order</span></h2>
-        <p class="section-desc">Ordering is quick and easy — wholesale or retail</p>
-      </div>
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-number">01</div>
-          <div class="step-icon"><i class="fas fa-list-check"></i></div>
-          <h3>Choose Products</h3>
-          <p>Browse our 150+ products. Select what you need and your preferred quantity.</p>
-        </div>
-        <div class="step-connector"><i class="fas fa-arrow-right"></i></div>
-        <div class="step-card">
-          <div class="step-number">02</div>
-          <div class="step-icon"><i class="fas fa-phone-volume"></i></div>
-          <h3>Place Your Order</h3>
-          <p>Call us or send your order list on WhatsApp. We'll confirm availability &amp; pricing.</p>
-        </div>
-        <div class="step-connector"><i class="fas fa-arrow-right"></i></div>
-        <div class="step-card">
-          <div class="step-number">03</div>
-          <div class="step-icon"><i class="fas fa-truck-fast"></i></div>
-          <h3>Get It Delivered</h3>
-          <p>We pack fresh and deliver to your doorstep. Pay on delivery — simple!</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SHOP BY CATEGORY ===== -->
-  <section id="categories" class="section categories">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-tag"><i class="fas fa-th-large"></i> Browse</p>
-        <h2>Shop by <span>Category</span></h2>
-        <p class="section-desc">Everything you need under one roof — from mill-fresh flour to daily essentials</p>
-      </div>
-      <div class="categories-grid">
-        <a href="#products" class="category-card" data-cat="flour">
-          <div class="cat-icon"><i class="fas fa-wheat-awn"></i></div>
-          <h3>Flour &amp; Atta</h3>
-          <p>Wheat, Multigrain, Besan, Maida, Sooji</p>
-          <span class="cat-tag">From &#8377;30/kg</span>
-        </a>
-        <a href="#products" class="category-card" data-cat="rice">
-          <div class="cat-icon"><i class="fas fa-bowl-rice"></i></div>
-          <h3>Rice</h3>
-          <p>Basmati, Non-Basmati, Sona Masoori</p>
-          <span class="cat-tag">From &#8377;38/kg</span>
-        </a>
-        <a href="#products" class="category-card" data-cat="dals">
-          <div class="cat-icon"><i class="fas fa-seedling"></i></div>
-          <h3>Dals &amp; Pulses</h3>
-          <p>Toor, Moong, Chana, Masoor, Urad, Rajma</p>
-          <span class="cat-tag">From &#8377;82/kg</span>
-        </a>
-        <a href="#products" class="category-card" data-cat="spices">
-          <div class="cat-icon"><i class="fas fa-pepper-hot"></i></div>
-          <h3>Spices &amp; Masala</h3>
-          <p>Haldi, Mirch, Dhaniya, Jeera, Garam Masala</p>
-          <span class="cat-tag">From &#8377;170/kg</span>
-        </a>
-        <a href="#products" class="category-card" data-cat="oil">
-          <div class="cat-icon"><i class="fas fa-bottle-droplet"></i></div>
-          <h3>Oil &amp; Ghee</h3>
-          <p>Mustard, Refined, Groundnut Oil, Desi Ghee</p>
-          <span class="cat-tag">From &#8377;140/L</span>
-        </a>
-        <a href="#products" class="category-card" data-cat="sugar">
-          <div class="cat-icon"><i class="fas fa-cubes-stacked"></i></div>
-          <h3>Sugar &amp; Dry Fruits</h3>
-          <p>Sugar, Jaggery, Mishri, Almonds, Cashew</p>
-          <span class="cat-tag">From &#8377;42/kg</span>
-        </a>
-        <a href="#products" class="category-card" data-cat="grocery">
-          <div class="cat-icon"><i class="fas fa-basket-shopping"></i></div>
-          <h3>Daily Essentials</h3>
-          <p>Salt, Tea, Detergent, Snacks, Household</p>
-          <span class="cat-tag">Wholesale Rate</span>
-        </a>
-        <a href="#products" class="category-card highlight-card" data-cat="all">
-          <div class="cat-icon"><i class="fas fa-boxes-stacked"></i></div>
-          <h3>All 150+ Products</h3>
-          <p>View entire catalogue &amp; combo offers</p>
-          <span class="cat-tag">Best Prices</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== DEALS BANNER ===== -->
-  <section class="deals-banner">
-    <div class="container">
-      <div class="deals-grid">
-        <div class="deal-card deal-primary">
-          <div class="deal-content">
-            <span class="deal-badge">WHOLESALE SPECIAL</span>
-            <h3>Bulk Order? Save More!</h3>
-            <p>Order 50kg+ of any product and get extra 5% off wholesale prices</p>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Call for Bulk Price</a>
-          </div>
-          <div class="deal-icon"><i class="fas fa-boxes-packing"></i></div>
-        </div>
-        <div class="deal-card deal-secondary">
-          <div class="deal-content">
-            <span class="deal-badge">COMBO OFFER</span>
-            <h3>Atta + Rice + Dal Combo</h3>
-            <p>Order all 3 together &amp; get delivery at reasonable rates + special combo pricing</p>
-            <a href="https://wa.me/919199774408" class="btn btn-sm" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
-          </div>
-          <div class="deal-icon"><i class="fas fa-tags"></i></div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ===== ABOUT ===== -->
   <section id="about" class="section about">
     <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Our Story</p>
+        <h2>About <span>Makhan Bhog</span></h2>
+      </div>
       <div class="about-grid">
         <div class="about-image">
           <img src="images/mill-photo-01.jpeg" alt="Makhan Bhog Flour Mill - Shah's Brothers" class="about-img" loading="lazy" />
-          <div class="about-img-badge">
-            <span class="years-count">25+</span>
-            <span>Years of Trust</span>
-          </div>
         </div>
         <div class="about-text">
-          <p class="section-tag"><i class="fas fa-store"></i> Our Story</p>
-          <h2>Shah's Brothers — <span>A Legacy of Quality</span></h2>
-          <p><strong>Makhan Bhog</strong> by <strong>Shah's Brothers</strong> is a premium wholesale grocery store &amp; flour mill providing top quality Atta, Rice, Dals, Spices, Oil, Ghee and all everyday grocery items at the best wholesale prices.</p>
-          <p>Our state-of-the-art flour mill processes the finest wheat grains. Our general store stocks a complete range of 150+ grocery essentials — everything in a single order.</p>
+          <h3>Shah's Brothers – A Legacy of Trust</h3>
+          <p><strong>Makhan Bhog</strong> by <strong>Shah's Brothers</strong> is a premium flour mill &amp; wholesale general store providing top
+            quality Atta (flour), Rice, Dals, Spices, Oil, Ghee and all everyday grocery items. We cater to both <em>wholesale</em> and
+            <em>retail</em> customers with equal dedication — order everything from atta to masala in one go!
+          </p>
+          <p>Our state-of-the-art flour mill processes the finest wheat grains to produce soft, nutritious, and
+            aromatic flour that makes every roti, paratha and puri taste heavenly. Our general store stocks a complete
+            range of grocery essentials so you can place combo orders in a single delivery.</p>
           <div class="about-highlights">
             <div class="highlight">
               <i class="fas fa-medal"></i>
               <div>
                 <strong>Premium Quality</strong>
-                <p>100% pure, no mixing — guaranteed</p>
+                <p>100% pure, no mixing</p>
               </div>
             </div>
             <div class="highlight">
               <i class="fas fa-truck-fast"></i>
               <div>
-                <strong>Reliable Delivery</strong>
-                <p>Wholesale &amp; retail orders on time</p>
+                <strong>Fast Delivery</strong>
+                <p>Wholesale &amp; retail orders</p>
               </div>
             </div>
             <div class="highlight">
-              <i class="fas fa-indian-rupee-sign"></i>
+              <i class="fas fa-handshake"></i>
               <div>
-                <strong>Factory Direct Prices</strong>
-                <p>Save 10–20% — no middlemen</p>
+                <strong>Trusted Service</strong>
+                <p>Generations of trust</p>
               </div>
             </div>
           </div>
@@ -294,11 +181,12 @@
   <section id="products" class="section products">
     <div class="container">
       <div class="section-header">
-        <p class="section-tag"><i class="fas fa-shopping-basket"></i> Our Catalogue</p>
-        <h2>Wholesale <span>Products</span></h2>
-        <p class="section-desc">Mill-fresh flour &amp; rice + complete grocery — wholesale &amp; retail, combo orders welcome!</p>
+        <p class="section-tag">What We Offer</p>
+        <h2>Our <span>Products</span></h2>
+        <p class="section-desc">Mill-fresh flour &amp; rice + complete general store grocery — wholesale &amp; retail, combo orders welcome!</p>
       </div>
 
+      <!-- Product Categories -->
       <div class="product-categories">
         <button class="cat-btn active" data-category="all">All Products</button>
         <button class="cat-btn" data-category="flour">Flour / Atta</button>
@@ -319,8 +207,8 @@
           </div>
           <div class="product-info">
             <h3>Makhan Bhog Atta</h3>
-            <p class="product-price"><span class="price-market">&#8377;35/kg</span> <span class="price-ours">&#8377;30/kg</span></p>
-            <p>Premium whole wheat flour — soft &amp; nutritious</p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 35/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 30/kg</span></p>
+            <p>Premium whole wheat flour – soft &amp; nutritious</p>
             <div class="product-sizes">
               <span class="size-tag">1 Kg</span>
               <span class="size-tag">2 Kg</span>
@@ -329,7 +217,7 @@
               <span class="size-tag">25 Kg</span>
               <span class="size-tag">50 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -339,14 +227,14 @@
           </div>
           <div class="product-info">
             <h3>Multigrain Atta</h3>
-            <p class="product-price"><span class="price-market">&#8377;58/kg</span> <span class="price-ours">&#8377;48/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 58/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 48/kg</span></p>
             <p>Blend of wheat, ragi, jowar &amp; bajra</p>
             <div class="product-sizes">
               <span class="size-tag">1 Kg</span>
               <span class="size-tag">5 Kg</span>
               <span class="size-tag">10 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -356,14 +244,14 @@
           </div>
           <div class="product-info">
             <h3>Besan (Gram Flour)</h3>
-            <p class="product-price"><span class="price-market">&#8377;100/kg</span> <span class="price-ours">&#8377;85/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 100/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 85/kg</span></p>
             <p>Pure gram flour for pakoras, sweets &amp; more</p>
             <div class="product-sizes">
               <span class="size-tag">500g</span>
               <span class="size-tag">1 Kg</span>
               <span class="size-tag">5 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -373,14 +261,14 @@
           </div>
           <div class="product-info">
             <h3>Maida (Refined Flour)</h3>
-            <p class="product-price"><span class="price-market">&#8377;45/kg</span> <span class="price-ours">&#8377;38/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 45/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 38/kg</span></p>
             <p>Fine refined flour for baking &amp; cooking</p>
             <div class="product-sizes">
               <span class="size-tag">1 Kg</span>
               <span class="size-tag">5 Kg</span>
               <span class="size-tag">25 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -390,14 +278,14 @@
           </div>
           <div class="product-info">
             <h3>Sooji / Rava</h3>
-            <p class="product-price"><span class="price-market">&#8377;50/kg</span> <span class="price-ours">&#8377;42/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 50/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 42/kg</span></p>
             <p>Coarse semolina for halwa, upma &amp; desserts</p>
             <div class="product-sizes">
               <span class="size-tag">500g</span>
               <span class="size-tag">1 Kg</span>
               <span class="size-tag">5 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -409,7 +297,7 @@
           </div>
           <div class="product-info">
             <h3>Basmati Rice</h3>
-            <p class="product-price"><span class="price-market">&#8377;115/kg</span> <span class="price-ours">&#8377;95/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 115/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 95/kg</span></p>
             <p>Long grain aromatic basmati rice</p>
             <div class="product-sizes">
               <span class="size-tag">1 Kg</span>
@@ -417,7 +305,7 @@
               <span class="size-tag">10 Kg</span>
               <span class="size-tag">25 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -427,15 +315,15 @@
           </div>
           <div class="product-info">
             <h3>Non-Basmati Rice</h3>
-            <p class="product-price"><span class="price-market">&#8377;45/kg</span> <span class="price-ours">&#8377;38/kg</span></p>
-            <p>Everyday cooking rice — clean &amp; polished</p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 45/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 38/kg</span></p>
+            <p>Everyday cooking rice – clean &amp; polished</p>
             <div class="product-sizes">
               <span class="size-tag">5 Kg</span>
               <span class="size-tag">10 Kg</span>
               <span class="size-tag">25 Kg</span>
               <span class="size-tag">50 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -445,26 +333,26 @@
           </div>
           <div class="product-info">
             <h3>Sona Masoori Rice</h3>
-            <p class="product-price"><span class="price-market">&#8377;65/kg</span> <span class="price-ours">&#8377;55/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 65/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 55/kg</span></p>
             <p>Lightweight, aromatic South Indian rice</p>
             <div class="product-sizes">
               <span class="size-tag">5 Kg</span>
               <span class="size-tag">10 Kg</span>
               <span class="size-tag">25 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
-        <!-- Spices & Masala -->
+        <!-- Spices & Masala Products -->
         <div class="product-card" data-category="spices">
           <div class="product-badge">Popular</div>
           <div class="product-img">
             <img src="images/products/turmeric.jpg" alt="Haldi (Turmeric Powder)" loading="lazy">
           </div>
           <div class="product-info">
-            <h3>Haldi (Turmeric)</h3>
-            <p class="product-price"><span class="price-market">&#8377;280/kg</span> <span class="price-ours">&#8377;240/kg</span></p>
+            <h3>Haldi (Turmeric Powder)</h3>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 280/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 240/kg</span></p>
             <p>Pure turmeric powder — bright color &amp; aroma</p>
             <div class="product-sizes">
               <span class="size-tag">100g</span>
@@ -472,7 +360,7 @@
               <span class="size-tag">500g</span>
               <span class="size-tag">1 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -482,7 +370,7 @@
           </div>
           <div class="product-info">
             <h3>Lal Mirch (Red Chilli)</h3>
-            <p class="product-price"><span class="price-market">&#8377;350/kg</span> <span class="price-ours">&#8377;300/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 350/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 300/kg</span></p>
             <p>Hot &amp; vibrant red chilli powder</p>
             <div class="product-sizes">
               <span class="size-tag">100g</span>
@@ -490,17 +378,17 @@
               <span class="size-tag">500g</span>
               <span class="size-tag">1 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
         <div class="product-card" data-category="spices">
           <div class="product-img">
-            <img src="images/products/coriander.jpg" alt="Dhaniya (Coriander)" loading="lazy">
+            <img src="images/products/coriander.jpg" alt="Dhaniya (Coriander Powder)" loading="lazy">
           </div>
           <div class="product-info">
-            <h3>Dhaniya (Coriander)</h3>
-            <p class="product-price"><span class="price-market">&#8377;200/kg</span> <span class="price-ours">&#8377;170/kg</span></p>
+            <h3>Dhaniya (Coriander Powder)</h3>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 200/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 170/kg</span></p>
             <p>Freshly ground coriander powder</p>
             <div class="product-sizes">
               <span class="size-tag">100g</span>
@@ -508,7 +396,7 @@
               <span class="size-tag">500g</span>
               <span class="size-tag">1 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -518,7 +406,7 @@
           </div>
           <div class="product-info">
             <h3>Jeera (Cumin Seeds)</h3>
-            <p class="product-price"><span class="price-market">&#8377;450/kg</span> <span class="price-ours">&#8377;380/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 450/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 380/kg</span></p>
             <p>Whole cumin seeds — rich aroma</p>
             <div class="product-sizes">
               <span class="size-tag">100g</span>
@@ -526,7 +414,7 @@
               <span class="size-tag">500g</span>
               <span class="size-tag">1 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -536,7 +424,7 @@
           </div>
           <div class="product-info">
             <h3>Garam Masala</h3>
-            <p class="product-price"><span class="price-market">&#8377;500/kg</span> <span class="price-ours">&#8377;420/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 500/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 420/kg</span></p>
             <p>Premium blend of whole spices</p>
             <div class="product-sizes">
               <span class="size-tag">50g</span>
@@ -544,7 +432,7 @@
               <span class="size-tag">250g</span>
               <span class="size-tag">500g</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -554,18 +442,18 @@
           </div>
           <div class="product-info">
             <h3>Ajwain &amp; Methi</h3>
-            <p class="product-price"><span class="price-market">&#8377;220/kg</span> <span class="price-ours">&#8377;180/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 220/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 180/kg</span></p>
             <p>Carom seeds &amp; dried fenugreek leaves</p>
             <div class="product-sizes">
               <span class="size-tag">100g</span>
               <span class="size-tag">250g</span>
               <span class="size-tag">500g</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
-        <!-- Dals & Pulses -->
+        <!-- Dals & Pulses Products -->
         <div class="product-card" data-category="dals">
           <div class="product-badge">Bestseller</div>
           <div class="product-img">
@@ -573,15 +461,15 @@
           </div>
           <div class="product-info">
             <h3>Toor Dal (Arhar)</h3>
-            <p class="product-price"><span class="price-market">&#8377;160/kg</span> <span class="price-ours">&#8377;135/kg</span></p>
-            <p>Premium quality toor dal — daily essential</p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 160/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 135/kg</span></p>
+            <p>Premium quality toor dal — daily cooking essential</p>
             <div class="product-sizes">
               <span class="size-tag">1 Kg</span>
               <span class="size-tag">5 Kg</span>
               <span class="size-tag">25 Kg</span>
               <span class="size-tag">50 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -591,14 +479,14 @@
           </div>
           <div class="product-info">
             <h3>Moong Dal</h3>
-            <p class="product-price"><span class="price-market">&#8377;140/kg</span> <span class="price-ours">&#8377;115/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 140/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 115/kg</span></p>
             <p>Yellow moong dal — light &amp; nutritious</p>
             <div class="product-sizes">
               <span class="size-tag">1 Kg</span>
               <span class="size-tag">5 Kg</span>
               <span class="size-tag">25 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -608,14 +496,14 @@
           </div>
           <div class="product-info">
             <h3>Chana Dal</h3>
-            <p class="product-price"><span class="price-market">&#8377;110/kg</span> <span class="price-ours">&#8377;90/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 110/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 90/kg</span></p>
             <p>Split chickpea dal — great for curries</p>
             <div class="product-sizes">
               <span class="size-tag">1 Kg</span>
               <span class="size-tag">5 Kg</span>
               <span class="size-tag">25 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -625,14 +513,14 @@
           </div>
           <div class="product-info">
             <h3>Masoor Dal</h3>
-            <p class="product-price"><span class="price-market">&#8377;100/kg</span> <span class="price-ours">&#8377;82/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 100/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 82/kg</span></p>
             <p>Red lentils — quick cooking dal</p>
             <div class="product-sizes">
               <span class="size-tag">1 Kg</span>
               <span class="size-tag">5 Kg</span>
               <span class="size-tag">25 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -642,14 +530,14 @@
           </div>
           <div class="product-info">
             <h3>Urad Dal</h3>
-            <p class="product-price"><span class="price-market">&#8377;150/kg</span> <span class="price-ours">&#8377;125/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 150/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 125/kg</span></p>
             <p>Black gram dal — perfect for dal makhani</p>
             <div class="product-sizes">
               <span class="size-tag">1 Kg</span>
               <span class="size-tag">5 Kg</span>
               <span class="size-tag">25 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -659,18 +547,18 @@
           </div>
           <div class="product-info">
             <h3>Rajma &amp; Chole</h3>
-            <p class="product-price"><span class="price-market">&#8377;160/kg</span> <span class="price-ours">&#8377;130/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 160/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 130/kg</span></p>
             <p>Kidney beans &amp; chickpeas — premium quality</p>
             <div class="product-sizes">
               <span class="size-tag">1 Kg</span>
               <span class="size-tag">5 Kg</span>
               <span class="size-tag">25 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
-        <!-- Oil & Ghee -->
+        <!-- Oil & Ghee Products -->
         <div class="product-card" data-category="oil">
           <div class="product-badge">Popular</div>
           <div class="product-img">
@@ -678,31 +566,31 @@
           </div>
           <div class="product-info">
             <h3>Mustard Oil (Sarson)</h3>
-            <p class="product-price"><span class="price-market">&#8377;190/L</span> <span class="price-ours">&#8377;165/L</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 190/L</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 165/L</span></p>
             <p>Pure kachi ghani mustard oil</p>
             <div class="product-sizes">
               <span class="size-tag">1 L</span>
               <span class="size-tag">5 L</span>
               <span class="size-tag">15 L</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
         <div class="product-card" data-category="oil">
           <div class="product-img">
-            <img src="images/products/refined-oil.jpg" alt="Refined Oil" loading="lazy">
+            <img src="images/products/refined-oil.jpg" alt="Refined Oil (Soybean/Sunflower)" loading="lazy">
           </div>
           <div class="product-info">
-            <h3>Refined Oil (Soybean)</h3>
-            <p class="product-price"><span class="price-market">&#8377;160/L</span> <span class="price-ours">&#8377;140/L</span></p>
+            <h3>Refined Oil (Soybean/Sunflower)</h3>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 160/L</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 140/L</span></p>
             <p>Light refined oil for everyday cooking</p>
             <div class="product-sizes">
               <span class="size-tag">1 L</span>
               <span class="size-tag">5 L</span>
               <span class="size-tag">15 L</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -713,7 +601,7 @@
           </div>
           <div class="product-info">
             <h3>Desi Ghee</h3>
-            <p class="product-price"><span class="price-market">&#8377;650/kg</span> <span class="price-ours">&#8377;580/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 650/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 580/kg</span></p>
             <p>Pure cow ghee — aromatic &amp; rich</p>
             <div class="product-sizes">
               <span class="size-tag">200g</span>
@@ -721,7 +609,7 @@
               <span class="size-tag">1 Kg</span>
               <span class="size-tag">5 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -731,25 +619,25 @@
           </div>
           <div class="product-info">
             <h3>Groundnut Oil</h3>
-            <p class="product-price"><span class="price-market">&#8377;220/L</span> <span class="price-ours">&#8377;190/L</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 220/L</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 190/L</span></p>
             <p>Cold-pressed peanut oil — rich flavour</p>
             <div class="product-sizes">
               <span class="size-tag">1 L</span>
               <span class="size-tag">5 L</span>
               <span class="size-tag">15 L</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
-        <!-- Sugar & Dry Fruits -->
+        <!-- Sugar & Dry Fruits Products -->
         <div class="product-card" data-category="sugar">
           <div class="product-img">
             <img src="images/products/sugar.jpg" alt="White Sugar" loading="lazy">
           </div>
           <div class="product-info">
             <h3>White Sugar</h3>
-            <p class="product-price"><span class="price-market">&#8377;50/kg</span> <span class="price-ours">&#8377;42/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 50/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 42/kg</span></p>
             <p>Refined white sugar — clean &amp; crystal</p>
             <div class="product-sizes">
               <span class="size-tag">1 Kg</span>
@@ -757,7 +645,7 @@
               <span class="size-tag">25 Kg</span>
               <span class="size-tag">50 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -767,14 +655,14 @@
           </div>
           <div class="product-info">
             <h3>Gur (Jaggery)</h3>
-            <p class="product-price"><span class="price-market">&#8377;65/kg</span> <span class="price-ours">&#8377;52/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 65/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 52/kg</span></p>
             <p>Natural jaggery — no chemicals</p>
             <div class="product-sizes">
               <span class="size-tag">500g</span>
               <span class="size-tag">1 Kg</span>
               <span class="size-tag">5 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -784,14 +672,14 @@
           </div>
           <div class="product-info">
             <h3>Mishri (Rock Sugar)</h3>
-            <p class="product-price"><span class="price-market">&#8377;120/kg</span> <span class="price-ours">&#8377;95/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 120/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 95/kg</span></p>
             <p>Crystal rock sugar — for sweets &amp; prasad</p>
             <div class="product-sizes">
               <span class="size-tag">250g</span>
               <span class="size-tag">500g</span>
               <span class="size-tag">1 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -801,7 +689,7 @@
           </div>
           <div class="product-info">
             <h3>Dry Fruits Mix</h3>
-            <p class="product-price"><span class="price-market">&#8377;900/kg</span> <span class="price-ours">&#8377;750/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 900/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 750/kg</span></p>
             <p>Almonds, cashew, raisins &amp; more</p>
             <div class="product-sizes">
               <span class="size-tag">100g</span>
@@ -809,11 +697,11 @@
               <span class="size-tag">500g</span>
               <span class="size-tag">1 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
-        <!-- Daily Essentials -->
+        <!-- Daily Essentials / General Store -->
         <div class="product-card" data-category="grocery">
           <div class="product-badge">Essential</div>
           <div class="product-img">
@@ -821,14 +709,14 @@
           </div>
           <div class="product-info">
             <h3>Salt (Namak)</h3>
-            <p class="product-price"><span class="price-market">&#8377;25/kg</span> <span class="price-ours">&#8377;20/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 25/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 20/kg</span></p>
             <p>Iodized salt — Tata, Annapurna &amp; more</p>
             <div class="product-sizes">
               <span class="size-tag">1 Kg</span>
               <span class="size-tag">5 Kg</span>
               <span class="size-tag">25 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -838,7 +726,7 @@
           </div>
           <div class="product-info">
             <h3>Tea (Chai Patti)</h3>
-            <p class="product-price"><span class="price-market">&#8377;350/kg</span> <span class="price-ours">&#8377;290/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 350/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 290/kg</span></p>
             <p>Premium CTC tea — strong &amp; flavourful</p>
             <div class="product-sizes">
               <span class="size-tag">100g</span>
@@ -846,7 +734,7 @@
               <span class="size-tag">500g</span>
               <span class="size-tag">1 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -856,14 +744,14 @@
           </div>
           <div class="product-info">
             <h3>Detergent &amp; Soap</h3>
-            <p class="product-price"><span class="price-market">&#8377;85/kg</span> <span class="price-ours">&#8377;72/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 85/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 72/kg</span></p>
             <p>Surf, Ghadi, Nirma &amp; more brands</p>
             <div class="product-sizes">
               <span class="size-tag">500g</span>
               <span class="size-tag">1 Kg</span>
               <span class="size-tag">5 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -873,14 +761,14 @@
           </div>
           <div class="product-info">
             <h3>Biscuits &amp; Snacks</h3>
-            <p class="product-price"><span class="price-market">MRP</span> <span class="price-ours">Wholesale Rate</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> MRP</span> <span class="price-ours">Wholesale Rate</span></p>
             <p>Parle, Britannia, Haldiram's &amp; more</p>
             <div class="product-sizes">
               <span class="size-tag">Pack</span>
               <span class="size-tag">Box</span>
               <span class="size-tag">Carton</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -890,14 +778,14 @@
           </div>
           <div class="product-info">
             <h3>Vinegar &amp; Sauces</h3>
-            <p class="product-price"><span class="price-market">MRP</span> <span class="price-ours">Wholesale Rate</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> MRP</span> <span class="price-ours">Wholesale Rate</span></p>
             <p>Tomato sauce, soy sauce, vinegar &amp; more</p>
             <div class="product-sizes">
               <span class="size-tag">200ml</span>
               <span class="size-tag">500ml</span>
               <span class="size-tag">1 L</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -907,14 +795,14 @@
           </div>
           <div class="product-info">
             <h3>Household Items</h3>
-            <p class="product-price"><span class="price-market">MRP</span> <span class="price-ours">Wholesale Rate</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> MRP</span> <span class="price-ours">Wholesale Rate</span></p>
             <p>Agarbatti, matchbox, candles, phenyl &amp; more</p>
             <div class="product-sizes">
               <span class="size-tag">Pack</span>
               <span class="size-tag">Box</span>
               <span class="size-tag">Carton</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -924,14 +812,14 @@
           </div>
           <div class="product-info">
             <h3>Papad &amp; Pickles</h3>
-            <p class="product-price"><span class="price-market">MRP</span> <span class="price-ours">Wholesale Rate</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> MRP</span> <span class="price-ours">Wholesale Rate</span></p>
             <p>Lijjat, Haldiram's papad &amp; achaar varieties</p>
             <div class="product-sizes">
               <span class="size-tag">200g</span>
               <span class="size-tag">500g</span>
               <span class="size-tag">1 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
 
@@ -941,20 +829,20 @@
           </div>
           <div class="product-info">
             <h3>Poha, Daliya &amp; Murmura</h3>
-            <p class="product-price"><span class="price-market">&#8377;55/kg</span> <span class="price-ours">&#8377;42/kg</span></p>
+            <p class="product-price"><span class="price-market"><i class="fas fa-indian-rupee-sign"></i> 55/kg</span> <span class="price-ours"><i class="fas fa-indian-rupee-sign"></i> 42/kg</span></p>
             <p>Flattened rice, broken wheat &amp; puffed rice</p>
             <div class="product-sizes">
               <span class="size-tag">500g</span>
               <span class="size-tag">1 Kg</span>
               <span class="size-tag">5 Kg</span>
             </div>
-            <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> Order Now</a>
+            <a href="tel:+919199774408" class="btn btn-sm">Order Now <i class="fas fa-phone"></i></a>
           </div>
         </div>
       </div>
 
       <div class="products-cta">
-        <p>Need a <strong>custom order</strong>, <strong>bulk quantity</strong> or <strong>combo pack</strong>? Call us directly!</p>
+        <p>Need a <strong>custom order</strong>, <strong>bulk quantity</strong> or <strong>combo pack</strong>? Call us directly — Mill + General Store, everything in one order!</p>
         <div class="cta-numbers">
           <a href="tel:+919199774408" class="btn btn-primary"><i class="fas fa-phone"></i> 9199774408</a>
           <a href="tel:+919939088176" class="btn btn-primary"><i class="fas fa-phone"></i> 9939088176</a>
@@ -968,11 +856,12 @@
   <section id="gallery" class="section gallery">
     <div class="container">
       <div class="section-header">
-        <p class="section-tag"><i class="fas fa-images"></i> Inside Our Mill</p>
-        <h2>Mill <span>Gallery</span></h2>
+        <p class="section-tag">Snapshots</p>
+        <h2>Our <span>Mill Gallery</span></h2>
         <p class="section-desc">A glimpse inside our flour mill — see how we process the finest grains</p>
       </div>
 
+      <!-- Gallery Filter -->
       <div class="gallery-filters">
         <button class="gal-btn active" data-filter="all">All</button>
         <button class="gal-btn" data-filter="photo">Photos</button>
@@ -980,114 +869,203 @@
       </div>
 
       <div class="gallery-grid">
+        <!-- Photo -->
         <div class="gallery-item" data-type="photo">
           <img src="images/mill-photo-01.jpeg" alt="Mill Snapshot" loading="lazy" />
-          <div class="gallery-overlay"><i class="fas fa-expand"></i><p>Mill Photo</p></div>
+          <div class="gallery-overlay">
+            <i class="fas fa-expand"></i>
+            <p>Mill Photo</p>
+          </div>
         </div>
+
+        <!-- Videos -->
         <div class="gallery-item" data-type="video">
           <video src="images/mill-video-01.mp4" muted preload="metadata"></video>
-          <div class="gallery-overlay"><i class="fas fa-play-circle"></i><p>Mill Process</p></div>
-          <span class="video-badge"><i class="fas fa-video"></i> Video</span>
+          <div class="gallery-overlay">
+            <i class="fas fa-play-circle"></i>
+            <p>Mill Process</p>
+          </div>
+          <span class="video-badge"><i class="fas fa-video"></i></span>
         </div>
+
         <div class="gallery-item" data-type="video">
           <video src="images/mill-video-02.mp4" muted preload="metadata"></video>
-          <div class="gallery-overlay"><i class="fas fa-play-circle"></i><p>Grinding Unit</p></div>
-          <span class="video-badge"><i class="fas fa-video"></i> Video</span>
+          <div class="gallery-overlay">
+            <i class="fas fa-play-circle"></i>
+            <p>Grinding Unit</p>
+          </div>
+          <span class="video-badge"><i class="fas fa-video"></i></span>
         </div>
+
         <div class="gallery-item" data-type="video">
           <video src="images/mill-video-03.mp4" muted preload="metadata"></video>
-          <div class="gallery-overlay"><i class="fas fa-play-circle"></i><p>Flour Production</p></div>
-          <span class="video-badge"><i class="fas fa-video"></i> Video</span>
+          <div class="gallery-overlay">
+            <i class="fas fa-play-circle"></i>
+            <p>Flour Production</p>
+          </div>
+          <span class="video-badge"><i class="fas fa-video"></i></span>
         </div>
+
         <div class="gallery-item" data-type="video">
           <video src="images/mill-video-04.mp4" muted preload="metadata"></video>
-          <div class="gallery-overlay"><i class="fas fa-play-circle"></i><p>Wheat Processing</p></div>
-          <span class="video-badge"><i class="fas fa-video"></i> Video</span>
+          <div class="gallery-overlay">
+            <i class="fas fa-play-circle"></i>
+            <p>Wheat Processing</p>
+          </div>
+          <span class="video-badge"><i class="fas fa-video"></i></span>
         </div>
+
         <div class="gallery-item" data-type="video">
           <video src="images/mill-video-05.mp4" muted preload="metadata"></video>
-          <div class="gallery-overlay"><i class="fas fa-play-circle"></i><p>Packing Unit</p></div>
-          <span class="video-badge"><i class="fas fa-video"></i> Video</span>
+          <div class="gallery-overlay">
+            <i class="fas fa-play-circle"></i>
+            <p>Packing Unit</p>
+          </div>
+          <span class="video-badge"><i class="fas fa-video"></i></span>
         </div>
+
         <div class="gallery-item" data-type="video">
           <video src="images/mill-video-06.mp4" muted preload="metadata"></video>
-          <div class="gallery-overlay"><i class="fas fa-play-circle"></i><p>Mill Operations</p></div>
-          <span class="video-badge"><i class="fas fa-video"></i> Video</span>
+          <div class="gallery-overlay">
+            <i class="fas fa-play-circle"></i>
+            <p>Mill Operations</p>
+          </div>
+          <span class="video-badge"><i class="fas fa-video"></i></span>
         </div>
+
         <div class="gallery-item" data-type="video">
           <video src="images/mill-video-07.mp4" muted preload="metadata"></video>
-          <div class="gallery-overlay"><i class="fas fa-play-circle"></i><p>Quality Check</p></div>
-          <span class="video-badge"><i class="fas fa-video"></i> Video</span>
+          <div class="gallery-overlay">
+            <i class="fas fa-play-circle"></i>
+            <p>Quality Check</p>
+          </div>
+          <span class="video-badge"><i class="fas fa-video"></i></span>
         </div>
+
         <div class="gallery-item" data-type="video">
           <video src="images/mill-video-08.mp4" muted preload="metadata"></video>
-          <div class="gallery-overlay"><i class="fas fa-play-circle"></i><p>Machine Room</p></div>
-          <span class="video-badge"><i class="fas fa-video"></i> Video</span>
+          <div class="gallery-overlay">
+            <i class="fas fa-play-circle"></i>
+            <p>Machine Room</p>
+          </div>
+          <span class="video-badge"><i class="fas fa-video"></i></span>
         </div>
+
         <div class="gallery-item" data-type="video">
           <video src="images/mill-video-09.mp4" muted preload="metadata"></video>
-          <div class="gallery-overlay"><i class="fas fa-play-circle"></i><p>Flour Sieving</p></div>
-          <span class="video-badge"><i class="fas fa-video"></i> Video</span>
+          <div class="gallery-overlay">
+            <i class="fas fa-play-circle"></i>
+            <p>Flour Sieving</p>
+          </div>
+          <span class="video-badge"><i class="fas fa-video"></i></span>
         </div>
+
         <div class="gallery-item" data-type="video">
           <video src="images/mill-video-10.mp4" muted preload="metadata"></video>
-          <div class="gallery-overlay"><i class="fas fa-play-circle"></i><p>Grain Storage</p></div>
-          <span class="video-badge"><i class="fas fa-video"></i> Video</span>
+          <div class="gallery-overlay">
+            <i class="fas fa-play-circle"></i>
+            <p>Grain Storage</p>
+          </div>
+          <span class="video-badge"><i class="fas fa-video"></i></span>
         </div>
+
         <div class="gallery-item" data-type="video">
           <video src="images/mill-video-11.mp4" muted preload="metadata"></video>
-          <div class="gallery-overlay"><i class="fas fa-play-circle"></i><p>Production Line</p></div>
-          <span class="video-badge"><i class="fas fa-video"></i> Video</span>
+          <div class="gallery-overlay">
+            <i class="fas fa-play-circle"></i>
+            <p>Production Line</p>
+          </div>
+          <span class="video-badge"><i class="fas fa-video"></i></span>
         </div>
+
         <div class="gallery-item" data-type="video">
           <video src="images/mill-video-12.mp4" muted preload="metadata"></video>
-          <div class="gallery-overlay"><i class="fas fa-play-circle"></i><p>Weighing Area</p></div>
-          <span class="video-badge"><i class="fas fa-video"></i> Video</span>
+          <div class="gallery-overlay">
+            <i class="fas fa-play-circle"></i>
+            <p>Weighing Area</p>
+          </div>
+          <span class="video-badge"><i class="fas fa-video"></i></span>
         </div>
+
         <div class="gallery-item" data-type="video">
           <video src="images/mill-video-13.mp4" muted preload="metadata"></video>
-          <div class="gallery-overlay"><i class="fas fa-play-circle"></i><p>Mill Interior</p></div>
-          <span class="video-badge"><i class="fas fa-video"></i> Video</span>
+          <div class="gallery-overlay">
+            <i class="fas fa-play-circle"></i>
+            <p>Mill Interior</p>
+          </div>
+          <span class="video-badge"><i class="fas fa-video"></i></span>
         </div>
+
         <div class="gallery-item" data-type="video">
           <video src="images/mill-video-14.mp4" muted preload="metadata"></video>
-          <div class="gallery-overlay"><i class="fas fa-play-circle"></i><p>Daily Operations</p></div>
-          <span class="video-badge"><i class="fas fa-video"></i> Video</span>
+          <div class="gallery-overlay">
+            <i class="fas fa-play-circle"></i>
+            <p>Daily Operations</p>
+          </div>
+          <span class="video-badge"><i class="fas fa-video"></i></span>
         </div>
+
         <div class="gallery-item" data-type="video">
           <video src="images/mill-video-15.mp4" muted preload="metadata"></video>
-          <div class="gallery-overlay"><i class="fas fa-play-circle"></i><p>Finished Product</p></div>
-          <span class="video-badge"><i class="fas fa-video"></i> Video</span>
+          <div class="gallery-overlay">
+            <i class="fas fa-play-circle"></i>
+            <p>Finished Product</p>
+          </div>
+          <span class="video-badge"><i class="fas fa-video"></i></span>
         </div>
+
         <div class="gallery-item" data-type="video">
           <video src="images/mill-video-16.mp4" muted preload="metadata"></video>
-          <div class="gallery-overlay"><i class="fas fa-play-circle"></i><p>Packaging</p></div>
-          <span class="video-badge"><i class="fas fa-video"></i> Video</span>
+          <div class="gallery-overlay">
+            <i class="fas fa-play-circle"></i>
+            <p>Packaging</p>
+          </div>
+          <span class="video-badge"><i class="fas fa-video"></i></span>
         </div>
+
         <div class="gallery-item" data-type="video">
           <video src="images/mill-video-17.mp4" muted preload="metadata"></video>
-          <div class="gallery-overlay"><i class="fas fa-play-circle"></i><p>Loading Bay</p></div>
-          <span class="video-badge"><i class="fas fa-video"></i> Video</span>
+          <div class="gallery-overlay">
+            <i class="fas fa-play-circle"></i>
+            <p>Loading Bay</p>
+          </div>
+          <span class="video-badge"><i class="fas fa-video"></i></span>
         </div>
+
         <div class="gallery-item" data-type="video">
           <video src="images/mill-video-18.mp4" muted preload="metadata"></video>
-          <div class="gallery-overlay"><i class="fas fa-play-circle"></i><p>Grinding Process</p></div>
-          <span class="video-badge"><i class="fas fa-video"></i> Video</span>
+          <div class="gallery-overlay">
+            <i class="fas fa-play-circle"></i>
+            <p>Grinding Process</p>
+          </div>
+          <span class="video-badge"><i class="fas fa-video"></i></span>
         </div>
+
         <div class="gallery-item" data-type="video">
           <video src="images/mill-video-19.mp4" muted preload="metadata"></video>
-          <div class="gallery-overlay"><i class="fas fa-play-circle"></i><p>Workshop</p></div>
-          <span class="video-badge"><i class="fas fa-video"></i> Video</span>
+          <div class="gallery-overlay">
+            <i class="fas fa-play-circle"></i>
+            <p>Workshop</p>
+          </div>
+          <span class="video-badge"><i class="fas fa-video"></i></span>
         </div>
+
         <div class="gallery-item" data-type="video">
           <video src="images/mill-video-20.mp4" muted preload="metadata"></video>
-          <div class="gallery-overlay"><i class="fas fa-play-circle"></i><p>Mill Exterior</p></div>
-          <span class="video-badge"><i class="fas fa-video"></i> Video</span>
+          <div class="gallery-overlay">
+            <i class="fas fa-play-circle"></i>
+            <p>Mill Exterior</p>
+          </div>
+          <span class="video-badge"><i class="fas fa-video"></i></span>
         </div>
+
         <div class="gallery-item" data-type="video">
           <video src="images/mill-video-21.mp4" muted preload="metadata"></video>
-          <div class="gallery-overlay"><i class="fas fa-play-circle"></i><p>Raw Materials</p></div>
-          <span class="video-badge"><i class="fas fa-video"></i> Video</span>
+          <div class="gallery-overlay">
+            <i class="fas fa-play-circle"></i>
+            <p>Raw Materials</p>
+          </div>
+          <span class="video-badge"><i class="fas fa-video"></i></span>
         </div>
       </div>
     </div>
@@ -1106,40 +1084,39 @@
   <section id="why-us" class="section why-us">
     <div class="container">
       <div class="section-header">
-        <p class="section-tag"><i class="fas fa-shield-halved"></i> Our Promise</p>
+        <p class="section-tag">Our Promise</p>
         <h2>Why Choose <span>Makhan Bhog</span></h2>
-        <p class="section-desc">Here's what sets us apart from the competition</p>
       </div>
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon"><i class="fas fa-wheat-awn"></i></div>
           <h3>100% Pure &amp; Fresh</h3>
-          <p>No adulteration, no mixing. Every packet is guaranteed pure from our own mill.</p>
+          <p>We process the finest quality grains — no adulteration, no mixing. Every packet is guaranteed pure.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon"><i class="fas fa-boxes-stacked"></i></div>
           <h3>Wholesale &amp; Retail</h3>
-          <p>Whether 1 kg or 1 ton — we serve individual buyers and bulk wholesale dealers alike.</p>
+          <p>Whether you need 1 kg or 1 ton — we serve individual buyers and bulk wholesale dealers alike.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon"><i class="fas fa-tags"></i></div>
-          <h3>Factory Direct Prices</h3>
-          <p>Direct from our mill — no middlemen. Save 10–20% on all products vs. market rates.</p>
+          <h3>Best Prices</h3>
+          <p>Direct from our mill to you — no middlemen. Get the best factory prices on all products.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon"><i class="fas fa-box-open"></i></div>
           <h3>Custom Packaging</h3>
-          <p>Available in 5 Kg, 10 Kg, 25 Kg, 50 Kg — or any custom size you need.</p>
+          <p>5 Kg, 10 Kg, 25 Kg, 50 Kg — or any custom size you need. We pack per your requirement.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon"><i class="fas fa-truck"></i></div>
           <h3>Reliable Delivery</h3>
-          <p>Timely dispatch and delivery for all orders. Your stock never runs out.</p>
+          <p>Timely dispatch and delivery for all orders. We ensure your stock never runs out.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon"><i class="fas fa-heart"></i></div>
           <h3>Customer First</h3>
-          <p>Your satisfaction is our priority. Call us anytime for enquiries or support.</p>
+          <p>Your satisfaction is our priority. Call us anytime for enquiries, orders, or support.</p>
         </div>
       </div>
     </div>
@@ -1162,12 +1139,12 @@
         <div class="stat-item">
           <i class="fas fa-truck-fast"></i>
           <h3 class="counter" data-target="10000">0</h3>
-          <p>Orders Fulfilled</p>
+          <p>Orders Delivered</p>
         </div>
         <div class="stat-item">
           <i class="fas fa-star"></i>
           <h3 class="counter" data-target="25">0</h3>
-          <p>Years of Excellence</p>
+          <p>Years of Trust</p>
         </div>
       </div>
     </div>
@@ -1177,12 +1154,14 @@
   <section class="section testimonials">
     <div class="container">
       <div class="section-header">
-        <p class="section-tag"><i class="fas fa-quote-left"></i> Testimonials</p>
-        <h2>What Our <span>Customers Say</span></h2>
-        <p class="section-desc">Real reviews from businesses and families across the region</p>
+        <p class="section-tag">What People Say</p>
+        <h2>Customer <span>Reviews</span></h2>
+        <p class="section-desc">Hear from our happy customers across the region</p>
       </div>
       <div class="testimonials-slider" id="testimonialSlider">
-        <div class="testimonials-track" id="testimonialTrack"></div>
+        <div class="testimonials-track" id="testimonialTrack">
+          <!-- Cards injected by JS -->
+        </div>
         <div class="slider-controls">
           <button class="slider-btn slider-prev" id="tPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
           <div class="slider-dots" id="sliderDots"></div>
@@ -1196,11 +1175,12 @@
   <section id="contact" class="section contact">
     <div class="container">
       <div class="section-header">
-        <p class="section-tag"><i class="fas fa-headset"></i> Reach Out</p>
+        <p class="section-tag">Get In Touch</p>
         <h2>Contact <span>Us</span></h2>
-        <p class="section-desc">Have a query? Want to place a wholesale order? We're a call away.</p>
+        <p class="section-desc">Have a query? Want to place an order? Fill the form or call us directly!</p>
       </div>
       <div class="contact-grid">
+        <!-- Contact Info -->
         <div class="contact-info">
           <div class="info-card">
             <div class="info-icon"><i class="fas fa-phone-volume"></i></div>
@@ -1216,15 +1196,15 @@
             <div>
               <h4>WhatsApp Order</h4>
               <a href="https://wa.me/919199774408" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
-              <p>Send your order list for instant response!</p>
+              <p>Send your order list via WhatsApp for quick response!</p>
             </div>
           </div>
           <div class="info-card">
             <div class="info-icon"><i class="fas fa-location-dot"></i></div>
             <div>
-              <h4>Visit Our Store</h4>
-              <p>Makhan Bhog Wholesale Store<br />Shah's Brothers</p>
-              <a href="https://maps.google.com/?q=25.902943,84.508041" target="_blank" rel="noopener noreferrer"><i class="fas fa-directions"></i> Get Directions</a>
+              <h4>Visit Our Mill</h4>
+              <p>Makhan Bhog Flour Mill<br />Shah's Brothers</p>
+              <a href="https://maps.google.com/?q=25.902943,84.508041" target="_blank" rel="noopener noreferrer"><i class="fas fa-directions"></i> Get Directions on Google Maps</a>
             </div>
           </div>
           <div class="info-card">
@@ -1236,9 +1216,10 @@
           </div>
         </div>
 
+        <!-- Enquiry Form -->
         <div class="contact-form-wrap">
-          <h3><i class="fas fa-envelope"></i> Quick Enquiry</h3>
-          <p>Fill in the details and we'll get back to you shortly.</p>
+          <h3><i class="fas fa-envelope"></i> Enquiry Form</h3>
+          <p>Fill in the details below and we'll get back to you shortly.</p>
           <form id="enquiryForm" class="enquiry-form" action="https://formsubmit.co/anupkr8709198@gmail.com" method="POST" target="form-iframe">
             <input type="hidden" name="_subject" value="New Enquiry - Makhan Bhog (makhanbhogatta.app)" />
             <input type="hidden" name="_captcha" value="false" />
@@ -1254,7 +1235,8 @@
               </div>
               <div class="form-group">
                 <label for="phone">Phone Number *</label>
-                <input type="tel" id="phone" name="phone" placeholder="Your phone number" required pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" />
+                <input type="tel" id="phone" name="phone" placeholder="Your phone number" required
+                  pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" />
               </div>
             </div>
             <div class="form-row">
@@ -1272,23 +1254,41 @@
               <select id="orderType" name="orderType">
                 <option value="">-- Select --</option>
                 <option value="wholesale">Wholesale</option>
-                <option value="retail">Retail</option>
+                <option value="retail">Retail (Person to Person)</option>
                 <option value="bulk">Bulk / Custom Order</option>
                 <option value="enquiry">General Enquiry</option>
               </select>
             </div>
             <div class="form-group">
-              <label>Products Interested In</label>
+              <label for="products">Products Interested In</label>
               <div class="checkbox-group">
-                <label class="checkbox-label"><input type="checkbox" name="products" value="Atta/Flour" /> Atta / Flour</label>
-                <label class="checkbox-label"><input type="checkbox" name="products" value="Rice" /> Rice</label>
-                <label class="checkbox-label"><input type="checkbox" name="products" value="Besan" /> Besan</label>
-                <label class="checkbox-label"><input type="checkbox" name="products" value="Maida" /> Maida</label>
-                <label class="checkbox-label"><input type="checkbox" name="products" value="Sooji" /> Sooji</label>
-                <label class="checkbox-label"><input type="checkbox" name="products" value="Spices" /> Spices</label>
-                <label class="checkbox-label"><input type="checkbox" name="products" value="Dals" /> Dals &amp; Pulses</label>
-                <label class="checkbox-label"><input type="checkbox" name="products" value="Oil" /> Cooking Oil</label>
-                <label class="checkbox-label"><input type="checkbox" name="products" value="Other" /> Other Grocery</label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="products" value="Atta/Flour" /> Atta / Flour
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="products" value="Rice" /> Rice
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="products" value="Besan" /> Besan
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="products" value="Maida" /> Maida
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="products" value="Sooji" /> Sooji / Rava
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="products" value="Spices" /> Spices
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="products" value="Dals" /> Dals &amp; Pulses
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="products" value="Oil" /> Cooking Oil
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="products" value="Other"> Other Grocery
+                </label>
               </div>
             </div>
             <div class="form-group">
@@ -1297,14 +1297,17 @@
             </div>
             <div class="form-group">
               <label for="message">Your Message</label>
-              <textarea id="message" name="message" rows="4" placeholder="Tell us more about your requirement..."></textarea>
+              <textarea id="message" name="message" rows="4"
+                placeholder="Tell us more about your requirement..."></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-full"><i class="fas fa-paper-plane"></i> Submit Enquiry</button>
+            <button type="submit" class="btn btn-primary btn-full">
+              <i class="fas fa-paper-plane"></i> Submit Enquiry
+            </button>
           </form>
           <div id="formSuccess" class="form-success hidden">
             <i class="fas fa-circle-check"></i>
             <h4>Thank you for your enquiry!</h4>
-            <p>We'll get back to you shortly. For faster response, call us directly.</p>
+            <p>We'll get back to you shortly. You can also call us directly for faster response.</p>
             <div class="success-numbers">
               <a href="tel:+919199774408" class="btn btn-sm"><i class="fas fa-phone"></i> 9199774408</a>
               <a href="tel:+919939088176" class="btn btn-sm"><i class="fas fa-phone"></i> 9939088176</a>
@@ -1313,68 +1316,65 @@
         </div>
       </div>
 
+      <!-- Embedded Google Map -->
       <div class="map-container">
         <h3 class="map-title"><i class="fas fa-map-location-dot"></i> Find Us on the Map</h3>
         <div class="map-wrap">
-          <iframe src="https://maps.google.com/maps?q=25.902943,84.508041&z=15&output=embed" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Makhan Bhog Store Location"></iframe>
+          <iframe
+            src="https://maps.google.com/maps?q=25.902943,84.508041&z=15&output=embed"
+            width="100%"
+            height="400"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Makhan Bhog Flour Mill Location">
+          </iframe>
         </div>
-        <a href="https://maps.google.com/?q=25.902943,84.508041" target="_blank" rel="noopener noreferrer" class="btn btn-primary map-btn"><i class="fas fa-diamond-turn-right"></i> Open in Google Maps</a>
+        <a href="https://maps.google.com/?q=25.902943,84.508041" target="_blank" rel="noopener noreferrer" class="btn btn-primary map-btn">
+          <i class="fas fa-diamond-turn-right"></i> Open in Google Maps
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ===== APP BANNER ===== -->
+  <!-- ===== GET THE APP BANNER ===== -->
   <section class="app-banner">
     <div class="container">
       <div class="app-banner-content">
         <div class="app-banner-text">
           <h2><i class="fas fa-mobile-screen-button"></i> Get the Makhan Bhog App</h2>
-          <p>Install our app for quick access to products, orders &amp; contact — works offline too!</p>
+          <p>Install our app for quick access to products, orders & contact — works offline too!</p>
           <div class="app-banner-btns">
-            <a href="app/makhan-bhog.apk" class="btn btn-primary" id="downloadApkBtn" download><i class="fab fa-android"></i> Download Android App</a>
-            <button class="btn btn-outline" id="bannerInstallBtn"><i class="fas fa-download"></i> Install from Browser</button>
+            <a href="app/makhan-bhog.apk" class="btn btn-primary btn-glow" id="downloadApkBtn" download>
+              <i class="fab fa-android"></i> Download Android App
+            </a>
+            <button class="btn btn-outline btn-glow" id="bannerInstallBtn">
+              <i class="fas fa-download"></i> Install from Browser
+            </button>
           </div>
           <p class="app-banner-note"><i class="fas fa-shield-halved"></i> Free &bull; No ads &bull; Safe &amp; Secure &bull; Under 2 MB</p>
         </div>
         <div class="app-banner-icon">
-          <div class="app-mock"><i class="fas fa-store"></i><span>Makhan Bhog</span></div>
+          <div class="app-mock">
+            <i class="fas fa-wheat-awn"></i>
+            <span>Makhan Bhog</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== FLOATING CTA (desktop only) ===== -->
+  <!-- ===== FLOATING CTA ===== -->
   <div class="floating-btns">
-    <a href="https://wa.me/919199774408" class="float-btn whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="tel:+919199774408" class="float-btn call" aria-label="Call Now"><i class="fas fa-phone"></i></a>
-  </div>
-
-  <!-- ===== SCROLL TO TOP ===== -->
-  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
-
-  <!-- ===== MOBILE BOTTOM NAV ===== -->
-  <nav class="mobile-bottom-nav" id="mobileBottomNav">
-    <a href="#home" class="bottom-nav-item active" data-section="home">
-      <i class="fas fa-home"></i>
-      <span>Home</span>
-    </a>
-    <a href="#products" class="bottom-nav-item" data-section="products">
-      <i class="fas fa-shopping-basket"></i>
-      <span>Products</span>
-    </a>
-    <a href="tel:+919199774408" class="bottom-nav-item bottom-nav-call">
-      <div class="bottom-nav-call-icon"><i class="fas fa-phone"></i></div>
-      <span>Call</span>
-    </a>
-    <a href="https://wa.me/919199774408" class="bottom-nav-item" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/919199774408" class="float-btn whatsapp" target="_blank" rel="noopener noreferrer"
+      aria-label="WhatsApp">
       <i class="fab fa-whatsapp"></i>
-      <span>WhatsApp</span>
     </a>
-    <a href="#contact" class="bottom-nav-item" data-section="contact">
-      <i class="fas fa-envelope"></i>
-      <span>Enquiry</span>
+    <a href="tel:+919199774408" class="float-btn call" aria-label="Call Now">
+      <i class="fas fa-phone"></i>
     </a>
-  </nav>
+  </div>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
@@ -1382,27 +1382,22 @@
       <div class="footer-grid">
         <div class="footer-col">
           <div class="footer-logo">
-            <span class="logo-icon"><i class="fas fa-store"></i></span>
+            <span class="logo-icon"><i class="fas fa-wheat-awn"></i></span>
             <div>
               <span class="brand-name">Makhan Bhog</span>
               <span class="brand-sub">Shah's Brothers</span>
             </div>
           </div>
-          <p>Premium quality Flour, Rice &amp; Grocery items at factory-direct wholesale prices. Serving businesses and families across the region since 25+ years.</p>
-          <div class="footer-trust">
-            <span><i class="fas fa-shield-halved"></i> FSSAI Licensed</span>
-            <span><i class="fas fa-certificate"></i> Quality Assured</span>
-          </div>
+          <p>Premium quality Flour, Rice &amp; Grocery items. Serving wholesale &amp; retail customers with the best
+            products straight from our mill.</p>
         </div>
         <div class="footer-col">
           <h4>Quick Links</h4>
           <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#categories">Categories</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#products">Products</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#why-us">Why Choose Us</a></li>
+            <li><a href="#why-us">Why Us</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -1415,22 +1410,22 @@
             <li><a href="#products">Dals, Pulses &amp; Rajma</a></li>
             <li><a href="#products">Spices, Masala &amp; Oil</a></li>
             <li><a href="#products">Sugar, Ghee &amp; Dry Fruits</a></li>
-            <li><a href="#products">Tea, Snacks &amp; Essentials</a></li>
+            <li><a href="#products">Tea, Snacks &amp; Daily Items</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Contact Us</h4>
           <ul class="footer-contact">
-            <li><a href="tel:+919199774408"><i class="fas fa-phone"></i> Yogendra Sah — 9199774408</a></li>
-            <li><a href="tel:+919939088176"><i class="fas fa-phone"></i> Jitendra Sah — 9939088176</a></li>
-            <li><a href="tel:+917739621555"><i class="fas fa-phone"></i> Kanhaiya Sah — 7739621555</a></li>
-            <li><a href="https://wa.me/919199774408" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp Us</a></li>
-            <li><a href="https://maps.google.com/?q=25.902943,84.508041" target="_blank" rel="noopener noreferrer"><i class="fas fa-location-dot"></i> Get Directions</a></li>
+            <li><a href="tel:+919199774408"><i class="fas fa-phone"></i> Yogendra Sah — +91 9199774408</a></li>
+            <li><a href="tel:+919939088176"><i class="fas fa-phone"></i> Jitendra Sah — +91 9939088176</a></li>
+            <li><a href="tel:+917739621555"><i class="fas fa-phone"></i> Kanhaiya Sah — +91 7739621555</a></li>
+            <li><a href="https://wa.me/919199774408" target="_blank" rel="noopener noreferrer"><i
+                  class="fab fa-whatsapp"></i> WhatsApp Us</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Makhan Bhog — Shah's Brothers. All rights reserved.</p>
+        <p>&copy; 2026 Makhan Bhog – Shah's Brothers. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -1446,6 +1441,7 @@
 
   <script src="js/main.js"></script>
   <script>
+    // Register Service Worker for PWA
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/service-worker.js');
@@ -1453,4 +1449,5 @@
     }
   </script>
 </body>
+
 </html>
