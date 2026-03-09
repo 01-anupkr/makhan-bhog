@@ -136,6 +136,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---------- THEME TOGGLE TOAST ---------- */
+  function showThemeToast(mode) {
+    const toast = document.getElementById('themeToast');
+    if (!toast) return;
+    toast.textContent = `Switched to ${mode === 'dark' ? 'Dark' : 'Light'} Mode`;
+    toast.classList.add('show');
+    toast.style.display = 'block';
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => { toast.style.display = 'none'; }, 300);
+    }, 1200);
+  }
+
   /* ---------- DARK / LIGHT MODE ---------- */
   const themeToggle = document.getElementById('themeToggle');
   if (themeToggle) {
@@ -146,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const next = current === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
+      showThemeToast(next);
     });
   }
 
