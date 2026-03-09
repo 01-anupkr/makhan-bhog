@@ -310,33 +310,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('enquiryForm');
   const formSuccess = document.getElementById('formSuccess');
   if (form && formSuccess) {
-    form.addEventListener('submit', e => {
-      // Collect data before native submit clears the form
-      const data = new FormData(form);
-      const name = data.get('fullName') || '';
-      const phone = data.get('phone') || '';
-      const orderType = data.get('orderType') || '';
-      const products = data.getAll('products').join(', ');
-      const qty = data.get('quantity') || '';
-      const msg = data.get('message') || '';
-
+    form.addEventListener('submit', () => {
       // Let the form submit naturally to the hidden iframe (FormSubmit)
-      // Do NOT call e.preventDefault()
-
-      // Build WhatsApp message
-      let waMsg = `*New Enquiry – Makhan Bhog*%0A`;
-      waMsg += `Name: ${name}%0A`;
-      waMsg += `Phone: ${phone}%0A`;
-      if (orderType) waMsg += `Order Type: ${orderType}%0A`;
-      if (products) waMsg += `Products: ${products}%0A`;
-      if (qty) waMsg += `Quantity: ${qty}%0A`;
-      if (msg) waMsg += `Message: ${msg}%0A`;
-
-      // Show success & open WhatsApp after a short delay
+      // Show success message after a short delay
       setTimeout(() => {
         form.classList.add('hidden');
         formSuccess.classList.remove('hidden');
-        window.open(`https://wa.me/919199774408?text=${waMsg}`, '_blank');
       }, 500);
     });
   }
