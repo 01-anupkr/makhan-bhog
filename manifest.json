@@ -4,8 +4,8 @@
   "description": "Premium quality Flour (Atta), Rice & Grocery – Wholesale & Retail by Shah's Brothers",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#fdf6ec",
-  "theme_color": "#b8860b",
+  "background_color": "#f0f7f2",
+  "theme_color": "#1b6d3d",
   "orientation": "portrait",
   "scope": "/",
   "icons": [

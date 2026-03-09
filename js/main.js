@@ -67,10 +67,9 @@ window.addEventListener('appinstalled', () => {
   if (installGuide) installGuide.classList.remove('active');
 });
 
-// Hide install button if already installed as app
 if (isStandalone() && installBtn) installBtn.style.display = 'none';
 
-// Banner install button (mirrors navbar install logic)
+// Banner install button
 const bannerInstallBtn = document.getElementById('bannerInstallBtn');
 if (bannerInstallBtn) {
   bannerInstallBtn.addEventListener('click', async () => {
@@ -88,31 +87,11 @@ if (bannerInstallBtn) {
   });
 }
 
-// ===== HERO PARTICLE EFFECT =====
-function createParticles() {
-  const container = document.getElementById("heroParticles");
-  if (!container) return;
-  const count = window.innerWidth < 768 ? 15 : 30;
-  for (let i = 0; i < count; i++) {
-    const particle = document.createElement("div");
-    particle.classList.add("hero-particle");
-    particle.style.left = Math.random() * 100 + "%";
-    particle.style.width = particle.style.height = (Math.random() * 4 + 2) + "px";
-    particle.style.animationDuration = (Math.random() * 8 + 6) + "s";
-    particle.style.animationDelay = (Math.random() * 5) + "s";
-    particle.style.background = Math.random() > 0.5
-      ? "rgba(212, 160, 23, 0.4)"
-      : "rgba(255, 255, 255, 0.2)";
-    container.appendChild(particle);
-  }
-}
-createParticles();
-
 // ===== DYNAMIC TESTIMONIALS SLIDER =====
 (function () {
   const reviews = [
     { name: "Rajesh Kumar", role: "Retail Customer", icon: "fa-user", stars: 5, product: "Wheat Atta", city: "Chhapra", date: "2 weeks ago", text: "Makhan Bhog ka atta sabse alag hai — soft roti banti hai, bilkul ghar jaisi quality. Hum 5 saal se inhi se lete hain." },
-    { name: "Amit Gupta", role: "Wholesale Dealer", icon: "fa-store", stars: 5, product: "Bulk Atta & Rice", city: "Siwan", date: "1 month ago", text: "Wholesale price mein best quality milti hai. Delivery bhi time pe hoti hai. Shah's Brothers pe pura bharosa hai." },
+    { name: "Amit Gupta", role: "Wholesale Dealer", icon: "fa-store", stars: 5, product: "Bulk Atta & Rice", city: "Siwan", date: "1 month ago", text: "Wholesale price mein best quality milti hai. Delivery bhi time pe hoti hai. Shah\u2019s Brothers pe pura bharosa hai." },
     { name: "Sunil Verma", role: "Restaurant Owner", icon: "fa-utensils", stars: 4.5, product: "Rice & Atta", city: "Patna", date: "3 weeks ago", text: "Pure quality, no mixing — we have been ordering rice and atta for our restaurant chain. Very consistent quality every time." },
     { name: "Priya Devi", role: "Housewife", icon: "fa-house-user", stars: 5, product: "Besan & Sooji", city: "Gopalganj", date: "1 week ago", text: "Besan se pakode banaye toh bilkul crispy bane. Sooji ka halwa bhi bahut tasty bana. Packing bhi achi hoti hai." },
     { name: "Vikram Singh", role: "Kirana Store", icon: "fa-shop", stars: 5, product: "All Products", city: "Ballia", date: "5 days ago", text: "Mere store pe sirf Makhan Bhog rakhte hain — customer kabhi complain nahi karte. Quality aur price dono perfect hai." },
@@ -152,7 +131,7 @@ createParticles();
           <div class="author-avatar"><i class="fas ${r.icon}"></i></div>
           <div>
             <strong>${r.name}</strong>
-            <span>${r.role} · ${r.city}</span>
+            <span>${r.role} \u00b7 ${r.city}</span>
           </div>
         </div>
         <span class="testimonial-date">${r.date}</span>
@@ -160,7 +139,6 @@ createParticles();
     </div>`;
   }
 
-  // Determine how many cards to show per view
   function cardsPerView() {
     if (window.innerWidth <= 480) return 1;
     if (window.innerWidth <= 900) return 2;
@@ -176,7 +154,6 @@ createParticles();
     perView = cardsPerView();
     totalSlides = Math.ceil(reviews.length / perView);
     track.innerHTML = reviews.map(buildCard).join("");
-    // Build dots
     dotsContainer.innerHTML = "";
     for (let i = 0; i < totalSlides; i++) {
       const dot = document.createElement("button");
@@ -193,7 +170,7 @@ createParticles();
     currentSlide = index;
     if (currentSlide >= totalSlides) currentSlide = 0;
     if (currentSlide < 0) currentSlide = totalSlides - 1;
-    const cardWidth = track.children[0].offsetWidth + 25; // gap
+    const cardWidth = track.children[0].offsetWidth + 25;
     track.style.transform = "translateX(-" + (currentSlide * perView * cardWidth) + "px)";
     dotsContainer.querySelectorAll(".slider-dot").forEach((d, i) => {
       d.classList.toggle("active", i === currentSlide);
@@ -203,11 +180,9 @@ createParticles();
   document.getElementById("tPrev").addEventListener("click", () => { goTo(currentSlide - 1); resetAuto(); });
   document.getElementById("tNext").addEventListener("click", () => { goTo(currentSlide + 1); resetAuto(); });
 
-  // Auto-play
   function startAuto() { autoPlayTimer = setInterval(() => goTo(currentSlide + 1), 5000); }
   function resetAuto() { clearInterval(autoPlayTimer); startAuto(); }
 
-  // Touch / swipe support
   let touchStartX = 0;
   track.addEventListener("touchstart", (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
   track.addEventListener("touchend", (e) => {
@@ -215,7 +190,6 @@ createParticles();
     if (Math.abs(diff) > 50) { diff > 0 ? goTo(currentSlide + 1) : goTo(currentSlide - 1); resetAuto(); }
   }, { passive: true });
 
-  // Pause on hover
   const slider = document.getElementById("testimonialSlider");
   slider.addEventListener("mouseenter", () => clearInterval(autoPlayTimer));
   slider.addEventListener("mouseleave", startAuto);
@@ -227,34 +201,35 @@ createParticles();
 
 // ===== DARK / LIGHT MODE TOGGLE =====
 const themeToggle = document.getElementById("themeToggle");
-const themeIcon = themeToggle.querySelector("i");
+if (themeToggle) {
+  const themeIcon = themeToggle.querySelector("i");
 
-function setTheme(theme) {
-  document.documentElement.setAttribute("data-theme", theme);
-  localStorage.setItem("theme", theme);
-  if (theme === "dark") {
-    themeIcon.classList.remove("fa-moon");
-    themeIcon.classList.add("fa-sun");
-  } else {
-    themeIcon.classList.remove("fa-sun");
-    themeIcon.classList.add("fa-moon");
+  function setTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+    if (theme === "dark") {
+      themeIcon.classList.remove("fa-moon");
+      themeIcon.classList.add("fa-sun");
+    } else {
+      themeIcon.classList.remove("fa-sun");
+      themeIcon.classList.add("fa-moon");
+    }
   }
+
+  const savedTheme = localStorage.getItem("theme") || "light";
+  setTheme(savedTheme);
+
+  themeToggle.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme");
+    setTheme(current === "dark" ? "light" : "dark");
+  });
 }
-
-// Load saved preference
-const savedTheme = localStorage.getItem("theme") || "light";
-setTheme(savedTheme);
-
-themeToggle.addEventListener("click", () => {
-  const current = document.documentElement.getAttribute("data-theme");
-  setTheme(current === "dark" ? "light" : "dark");
-});
 
 // ===== NAVBAR SCROLL EFFECT =====
 const navbar = document.getElementById("navbar");
 
 window.addEventListener("scroll", () => {
-  navbar.classList.toggle("scrolled", window.scrollY > 50);
+  if (navbar) navbar.classList.toggle("scrolled", window.scrollY > 50);
 });
 
 // ===== MOBILE MENU =====
@@ -283,14 +258,17 @@ function closeMenu() {
   document.body.style.overflow = "";
 }
 
-hamburger.addEventListener("click", () => {
-  navLinks.classList.contains("open") ? closeMenu() : openMenu();
-});
+if (hamburger) {
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.contains("open") ? closeMenu() : openMenu();
+  });
+}
 
-// Close on link click
-navLinks.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", closeMenu);
-});
+if (navLinks) {
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+}
 
 // ===== ACTIVE NAV LINK ON SCROLL =====
 const sections = document.querySelectorAll("section[id]");
@@ -298,12 +276,10 @@ const navItems = document.querySelectorAll(".nav-links a");
 
 function updateActiveNav() {
   const scrollPos = window.scrollY + 150;
-
   sections.forEach((section) => {
     const top = section.offsetTop;
     const height = section.offsetHeight;
     const id = section.getAttribute("id");
-
     if (scrollPos >= top && scrollPos < top + height) {
       navItems.forEach((item) => {
         item.classList.remove("active");
@@ -323,22 +299,32 @@ const productCards = document.querySelectorAll(".product-card");
 
 catBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
-    // Update active button
     catBtns.forEach((b) => b.classList.remove("active"));
     btn.classList.add("active");
-
     const category = btn.dataset.category;
-
     productCards.forEach((card, index) => {
       if (category === "all" || card.dataset.category === category) {
         card.classList.remove("hidden");
         card.style.animation = "none";
-        card.offsetHeight; // reflow
+        card.offsetHeight;
         card.style.animation = `fadeInUp 0.4s ease ${index * 0.05}s forwards`;
       } else {
         card.classList.add("hidden");
       }
     });
+  });
+});
+
+// ===== CATEGORY CARD CLICK -> FILTER PRODUCTS =====
+document.querySelectorAll(".category-card[data-cat]").forEach((card) => {
+  card.addEventListener("click", (e) => {
+    const cat = card.dataset.cat;
+    // Find matching product filter button and click it
+    const matchBtn = document.querySelector(`.cat-btn[data-category="${cat}"]`);
+    if (matchBtn) {
+      // Small delay to allow scroll to complete
+      setTimeout(() => matchBtn.click(), 400);
+    }
   });
 });
 
@@ -366,7 +352,6 @@ function animateCounters() {
   });
 }
 
-// Intersection Observer for counters
 const statsSection = document.querySelector(".stats-banner");
 if (statsSection) {
   const statsObserver = new IntersectionObserver(
@@ -383,13 +368,12 @@ if (statsSection) {
 
 // ===== SCROLL FADE-IN ANIMATION =====
 const fadeElements = document.querySelectorAll(
-  ".product-card, .feature-card, .info-card, .highlight, .about-text, .about-img-placeholder, .testimonial-card, .about-image, .stat-item, .gallery-item"
+  ".product-card, .feature-card, .info-card, .highlight, .about-text, .about-image, .testimonial-card, .stat-item, .gallery-item, .category-card, .deal-card"
 );
 
 fadeElements.forEach((el) => el.classList.add("fade-in"));
 
-// Assign stagger classes to grid children
-document.querySelectorAll(".products-grid, .features-grid, .testimonials-grid, .gallery-grid").forEach((grid) => {
+document.querySelectorAll(".products-grid, .features-grid, .gallery-grid, .categories-grid").forEach((grid) => {
   Array.from(grid.children).forEach((child, i) => {
     child.classList.add("stagger-" + ((i % 6) + 1));
   });
@@ -415,14 +399,11 @@ const formSuccess = document.getElementById("formSuccess");
 
 if (enquiryForm) {
   enquiryForm.addEventListener("submit", (e) => {
-    // Don't prevent default — form submits natively into hidden iframe
-
     const submitBtn = enquiryForm.querySelector('button[type="submit"]');
     submitBtn.innerHTML = '<i class="fas fa-spinner"></i> Sending...';
     submitBtn.classList.add("btn-loading");
     submitBtn.disabled = true;
 
-    // Collect form data for WhatsApp
     const fd = new FormData(enquiryForm);
     const name = fd.get("fullName") || "";
     const phone = fd.get("phone") || "";
@@ -432,9 +413,8 @@ if (enquiryForm) {
     const quantity = fd.get("quantity") || "";
     const message = fd.get("message") || "";
 
-    // Open WhatsApp with pre-filled message after a short delay
     const whatsappMsg = encodeURIComponent(
-      `🌾 *New Enquiry - Makhan Bhog*\n\n` +
+      `\ud83c\udf3e *New Enquiry - Makhan Bhog*\n\n` +
         `*Name:* ${name}\n` +
         `*Phone:* ${phone}\n` +
         `*City:* ${city}\n` +
@@ -447,7 +427,6 @@ if (enquiryForm) {
       window.open(`https://wa.me/919199774408?text=${whatsappMsg}`, "_blank");
     }, 500);
 
-    // Show success after short delay
     setTimeout(() => {
       submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Enquiry';
       submitBtn.classList.remove("btn-loading");
@@ -456,7 +435,6 @@ if (enquiryForm) {
       formSuccess.classList.remove("hidden");
     }, 2000);
 
-    // Reset after 12 seconds
     setTimeout(() => {
       enquiryForm.reset();
       enquiryForm.style.display = "block";
@@ -465,7 +443,7 @@ if (enquiryForm) {
   });
 }
 
-// ===== SMOOTH SCROLL POLYFILL (for older browsers) =====
+// ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     const targetId = this.getAttribute("href");
@@ -487,7 +465,6 @@ galBtns.forEach((btn) => {
     galBtns.forEach((b) => b.classList.remove("active"));
     btn.classList.add("active");
     const filter = btn.dataset.filter;
-
     galItems.forEach((item) => {
       if (filter === "all" || item.dataset.type === filter) {
         item.classList.remove("hidden");
@@ -522,20 +499,16 @@ function openLightbox(index) {
 }
 
 function closeLightbox() {
-  // Pause any playing videos
   const vid = lbContent.querySelector("video");
   if (vid) vid.pause();
-
   lightbox.classList.remove("active");
   document.body.style.overflow = "";
   lbContent.innerHTML = "";
 }
 
 function showLightboxItem() {
-  // Pause previous video if any
   const prevVid = lbContent.querySelector("video");
   if (prevVid) prevVid.pause();
-
   const item = visibleItems[currentLbIndex];
   const isVideo = item.dataset.type === "video";
 
@@ -551,7 +524,6 @@ function showLightboxItem() {
   lbCounter.textContent = `${currentLbIndex + 1} / ${visibleItems.length}`;
 }
 
-// Click gallery items to open lightbox
 galItems.forEach((item) => {
   item.addEventListener("click", () => {
     visibleItems = getVisibleItems();
@@ -560,26 +532,26 @@ galItems.forEach((item) => {
   });
 });
 
-lbClose.addEventListener("click", closeLightbox);
+if (lbClose) lbClose.addEventListener("click", closeLightbox);
 
-lbPrev.addEventListener("click", () => {
+if (lbPrev) lbPrev.addEventListener("click", () => {
   currentLbIndex = (currentLbIndex - 1 + visibleItems.length) % visibleItems.length;
   showLightboxItem();
 });
 
-lbNext.addEventListener("click", () => {
+if (lbNext) lbNext.addEventListener("click", () => {
   currentLbIndex = (currentLbIndex + 1) % visibleItems.length;
   showLightboxItem();
 });
 
-// Close on background click
-lightbox.addEventListener("click", (e) => {
-  if (e.target === lightbox) closeLightbox();
-});
+if (lightbox) {
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+}
 
-// Keyboard navigation
 document.addEventListener("keydown", (e) => {
-  if (!lightbox.classList.contains("active")) return;
+  if (!lightbox || !lightbox.classList.contains("active")) return;
   if (e.key === "Escape") closeLightbox();
   if (e.key === "ArrowLeft") {
     currentLbIndex = (currentLbIndex - 1 + visibleItems.length) % visibleItems.length;
